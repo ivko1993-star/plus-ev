@@ -26,6 +26,15 @@ th { color:var(--muted); font-weight:500; } td.w { color:var(--green); font-weig
 footer { color:var(--muted); font-size:12px; margin-top:28px; }
 .tg { display:inline-block; margin:0 0 18px; padding:10px 16px; border-radius:10px; background:#229ED9; color:#fff; font-weight:600; text-decoration:none; }
 .eur { font-size:13px; margin-top:2px; } .eur b, .pos { color:var(--green); } .neg { color:var(--red); } td small { color:var(--muted); font-weight:400; }
+.chart { margin-top:14px; background:var(--card); border:1px solid var(--line); border-radius:12px; padding:12px 14px; }
+.chart-head { display:flex; justify-content:space-between; align-items:baseline; color:var(--muted); font-size:13px; } .chart-head b { font-size:18px; }
+.chart svg { display:block; width:100%; height:150px; margin-top:6px; overflow:visible; }
+.chart .ln { fill:none; stroke:var(--accent); stroke-width:2; vector-effect:non-scaling-stroke; stroke-linejoin:round; }
+.chart .area { fill:var(--accent); opacity:.12; } .chart .zero { stroke:var(--line); stroke-width:1; vector-effect:non-scaling-stroke; }
+.chart circle { fill:var(--accent); stroke:var(--card); stroke-width:2; opacity:0; vector-effect:non-scaling-stroke; } .chart .pt:hover circle { opacity:1; }
+.video { position:relative; aspect-ratio:16/9; border-radius:12px; overflow:hidden; background:#000; } .video iframe { position:absolute; inset:0; width:100%; height:100%; border:0; }
+.how { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:10px; } .how b { display:block; color:var(--accent); margin-bottom:4px; } .how span { color:var(--muted); font-size:14px; }
+header.brand { padding:18px; border-radius:16px; background:linear-gradient(135deg, rgba(11,122,90,.18), rgba(34,158,217,.12)); }
 .live { color:var(--red); font-size:12px; font-weight:600; margin-left:4px; }
 .tg:hover { background:#1b8bc0; } .btns { display:flex; flex-wrap:wrap; gap:10px; } .tg.don { background:#f5a524; color:#1a1300; } .tg.ads { margin:10px 0 0; background:var(--accent); }
 .adslot { display:flex; flex-direction:column; align-items:center; gap:4px; margin:14px 0 0; padding:16px; border-radius:12px; background:var(--card); border:1px solid var(--line); color:var(--text); text-decoration:none; text-align:center; }
@@ -34,7 +43,7 @@ footer { color:var(--muted); font-size:12px; margin-top:28px; }
 </style></head>
 <body><main>
 <header class="brand"><img src="logo.png" alt="" width="56" height="56"><h1>+EV Сигнали</h1></header>
-<p class="sub">Подбрани залози с висок шанс и добър коефициент: <b>победа на фаворит</b>, <b>над 2.5 гола</b>, <b>над 1.5 гола</b> и <b>гол-гол</b>. Обновено: 25.10.2026 23:32</p>
+<p class="sub">Подбрани залози с висок шанс и добър коефициент: <b>победа на фаворит</b>, <b>над 2.5 гола</b>, <b>над 1.5 гола</b> и <b>гол-гол</b>. Обновено: 25.10.2026 23:50</p>
 <div class="btns"><a class="tg" href="https://t.me/+674DZJM1EcZlZDc0" target="_blank" rel="noopener">📢 Влез в Telegram канала</a><a class="tg don" href="https://t.me/ivko_value_signals_bot?start=donate" target="_blank" rel="noopener">☕ Подкрепи ни</a></div>
 <div class="stats">
 <div class="stat"><b>5</b><span>приключили сигнала</span></div>
@@ -43,6 +52,7 @@ footer { color:var(--muted); font-size:12px; margin-top:28px; }
 <div class="stat"><b>+49.8%</b><span>ROI (възвръщаемост)</span></div>
 <div class="stat"><b>0</b><span>предстоящи</span></div>
 </div>
+<div class='chart'><div class='chart-head'><span>Натрупана печалба при 20 € на сигнал</span><b class='pos'>+49.80 €</b></div><svg viewBox='0 0 600 170' preserveAspectRatio='none' role='img' aria-label='Натрупана печалба: +49.80 €'><line class='zero' x1='14' x2='586' y1='156.0' y2='156.0'/><polygon class='area' points='14.0,156.0 14.0,156.0 128.4,128.6 242.8,109.8 357.2,64.2 471.6,36.8 586.0,14.0 586.0,156.0'/><polyline class='ln' points='14.0,156.0 128.4,128.6 242.8,109.8 357.2,64.2 471.6,36.8 586.0,14.0'/><g class='pt'><rect x='71.2' y='0' width='114.4' height='170' fill='transparent'/><circle cx='128.4' cy='128.6' r='4'/><title>Lazio – Parma – Победа: Lazio: +9.60 € · общо +9.60 €</title></g><g class='pt'><rect x='185.6' y='0' width='114.4' height='170' fill='transparent'/><circle cx='242.8' cy='109.8' r='4'/><title>FC Tokyo – Mito Hollyhock – Победа: FC Tokyo: +6.60 € · общо +16.20 €</title></g><g class='pt'><rect x='300.0' y='0' width='114.4' height='170' fill='transparent'/><circle cx='357.2' cy='64.2' r='4'/><title>Man Utd – Bournemouth – Над 2.5 гола: +16.00 € · общо +32.20 €</title></g><g class='pt'><rect x='414.4' y='0' width='114.4' height='170' fill='transparent'/><circle cx='471.6' cy='36.8' r='4'/><title>SC Freiburg – Bayern Munich – Победа: Bayern Munich: +9.60 € · общо +41.80 €</title></g><g class='pt'><rect x='528.8' y='0' width='114.4' height='170' fill='transparent'/><circle cx='586.0' cy='14.0' r='4'/><title>Molde FK – Fredrikstad FK – Победа: Molde FK: +8.00 € · общо +49.80 €</title></g></svg></div>
 <a class="adslot empty-ad" href="https://t.me/ivko_value_signals_bot?start=ads" target="_blank" rel="noopener"><span>Рекламно място</span><b>Вашата реклама тук</b><span>Пишете ни за условия →</span></a>
 <h2>Предстоящи сигнали</h2>
 <ul><li class='empty'>Няма предстоящи сигнали в момента. Новите се появяват тук автоматично.</li></ul>
@@ -52,6 +62,14 @@ footer { color:var(--muted); font-size:12px; margin-top:28px; }
 <h2>ROI по периоди</h2>
 <div class="tbl"><table><thead><tr><th>Период</th><th>Сигнали</th><th>Печеливши / губещи</th><th>Печалба при 20 €</th><th>ROI</th></tr></thead>
 <tbody><tr><td>Днес</td><td>4</td><td>4 / 0</td><td class='w'>+40.20 €</td><td class='w'>+50.2%</td></tr><tr><td>Вчера</td><td>1</td><td>1 / 0</td><td class='w'>+9.60 €</td><td class='w'>+48.0%</td></tr><tr><td>Последните 7 дни</td><td>5</td><td>5 / 0</td><td class='w'>+49.80 €</td><td class='w'>+49.8%</td></tr><tr><td>Последните 30 дни</td><td>5</td><td>5 / 0</td><td class='w'>+49.80 €</td><td class='w'>+49.8%</td></tr><tr><td>Този месец</td><td>5</td><td>5 / 0</td><td class='w'>+49.80 €</td><td class='w'>+49.8%</td></tr><tr><td>Общо</td><td>5</td><td>5 / 0</td><td class='w'>+49.80 €</td><td class='w'>+49.8%</td></tr></tbody></table></div>
+<h2>Видео</h2>
+<div class='video'><iframe src='https://www.youtube-nocookie.com/embed/videoseries?list=UUG5qGWdu8nIRZqJ_GgDwQ-w' title='Висша лига – последни видеа' loading='lazy' allow='encrypted-media; picture-in-picture' allowfullscreen></iframe></div>
+<h2>Как работим</h2>
+<div class="how">
+<div class="card"><b>1. Сравняваме</b><span>Всеки час проверяваме стотици мачове и сравняваме коефициентите на bet365 с „честните“ на Pinnacle – най-точния букмейкър в света.</span></div>
+<div class="card"><b>2. Подбираме</b><span>Пращаме само когато bet365 плаща повече, отколкото трябва, и само четири вида залог с висок шанс: победа на фаворит, над 2.5, над 1.5 и гол-гол.</span></div>
+<div class="card"><b>3. Показваме всичко</b><span>Всеки сигнал остава тук с крайния резултат – и печалбите, и загубите. Нищо не се трие.</span></div>
+</div>
 <h2>Реклама и партньорства</h2>
 <div class="card">Искате да достигнете до нашата аудитория? Пишете ни – ще отговорим лично.<br><a class="tg ads" href="https://t.me/ivko_value_signals_bot?start=ads" target="_blank" rel="noopener">✉️ Пиши за реклама</a></div>
 <footer>Само информация – не е съвет за залагане. Залагайте отговорно и само суми, които можете да загубите (18+).
