@@ -1,12 +1,13 @@
 <!doctype html>
 <html lang="bg"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>+EV Сигнали</title>
+<link rel="icon" type="image/png" href="favicon.png"><link rel="apple-touch-icon" href="logo.png">
 <style>
 :root { --bg:#f6f7f9; --card:#fff; --text:#16181d; --muted:#667085; --line:#e4e7ec; --green:#12805c; --red:#c0362c; --accent:#0b7a5a; }
 @media (prefers-color-scheme: dark) { :root { --bg:#0e1116; --card:#161b22; --text:#e6e9ef; --muted:#98a2b3; --line:#283041; --green:#3ccf91; --red:#ff6b5e; --accent:#3ccf91; } }
 * { box-sizing:border-box; } body { margin:0; background:var(--bg); color:var(--text); font:15px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; }
 main { max-width:860px; margin:0 auto; padding:24px 16px 48px; }
-h1 { font-size:26px; margin:0 0 4px; } h2 { font-size:18px; margin:28px 0 10px; }
+h1 { font-size:26px; margin:0; } .brand { display:flex; align-items:center; gap:12px; margin-bottom:8px; } .brand img { border-radius:50%; } h2 { font-size:18px; margin:28px 0 10px; }
 .sub { color:var(--muted); margin:0 0 18px; }
 .stats { display:grid; grid-template-columns:repeat(auto-fit,minmax(130px,1fr)); gap:10px; }
 .stat { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:12px 14px; }
@@ -18,12 +19,12 @@ ul { list-style:none; padding:0; margin:0; display:grid; gap:10px; }
 .empty { color:var(--muted); padding:12px; }
 .tbl { overflow-x:auto; background:var(--card); border:1px solid var(--line); border-radius:12px; }
 table { width:100%; border-collapse:collapse; font-size:14px; } th, td { text-align:left; padding:8px 10px; border-bottom:1px solid var(--line); white-space:nowrap; }
-th { color:var(--muted); font-weight:500; } td.w { color:var(--green); font-weight:600; } td.l { color:var(--red); font-weight:600; }
+th { color:var(--muted); font-weight:500; } td.w { color:var(--green); font-weight:600; } td.sc { font-weight:700; } td.l { color:var(--red); font-weight:600; }
 footer { color:var(--muted); font-size:12px; margin-top:28px; }
 </style></head>
 <body><main>
-<h1>+EV Сигнали</h1>
-<p class="sub">Сигнали, при които bet365 плаща повече от честния коефициент на Pinnacle: <b>победа на фаворит</b> (шанс 65%+) и <b>над 2.5 гола</b> (шанс 55%+). Обновено: 25.10.2026 18:05</p>
+<header class="brand"><img src="logo.png" alt="" width="56" height="56"><h1>+EV Сигнали</h1></header>
+<p class="sub">Подбрани залози с висок шанс и добър коефициент: <b>победа на фаворит</b> и <b>над 2.5 гола</b>. Обновено: 25.10.2026 18:11</p>
 <div class="stats">
 <div class="stat"><b>2</b><span>приключили сигнала</span></div>
 <div class="stat"><b>2 / 0</b><span>печеливши / губещи</span></div>
@@ -31,10 +32,10 @@ footer { color:var(--muted); font-size:12px; margin-top:28px; }
 <div class="stat"><b>1</b><span>предстоящи</span></div>
 </div>
 <h2>Предстоящи сигнали</h2>
-<ul><li class='card'><div class='top'><span class='time'>25.10 18:30</span><span class='lg'></span></div><div class='match'>SC Freiburg – Bayern Munich</div><div class='pick'>🏆 Победа: Bayern Munich</div><div class='meta'>Коефициент <b>1.48</b> · шанс 70% · залог 6.7% от банката</div></li></ul>
+<ul><li class='card'><div class='top'><span class='time'>25.10 18:30</span><span class='lg'>Бундеслига</span></div><div class='match'>SC Freiburg – Bayern Munich</div><div class='pick'>🏆 Победа: Bayern Munich</div><div class='meta'>Коефициент <b>1.48</b> · шанс 70% · залог 6.7% от банката</div></li></ul>
 <h2>Резултати</h2>
-<div class="tbl"><table><thead><tr><th>Начало</th><th>Мач</th><th>Залог</th><th>Коеф.</th><th>Резултат (единици)</th></tr></thead>
-<tbody><tr><td>25.10 09:00</td><td>FC Tokyo – Mito Hollyhock</td><td>Победа: FC Tokyo</td><td>1.33</td><td class='w'>✅ +0.33</td></tr><tr><td>24.10 21:45</td><td>Lazio – Parma</td><td>Победа: Lazio</td><td>1.48</td><td class='w'>✅ +0.48</td></tr></tbody></table></div>
+<div class="tbl"><table><thead><tr><th>Начало</th><th>Мач</th><th>Краен резултат</th><th>Залог</th><th>Коеф.</th><th>Печалба (единици)</th></tr></thead>
+<tbody><tr><td>25.10 09:00</td><td>FC Tokyo – Mito Hollyhock</td><td class='sc'>6:0</td><td>Победа: FC Tokyo</td><td>1.33</td><td class='w'>✅ +0.33</td></tr><tr><td>24.10 21:45</td><td>Lazio – Parma</td><td class='sc'>2:1</td><td>Победа: Lazio</td><td>1.48</td><td class='w'>✅ +0.48</td></tr></tbody></table></div>
 <footer>Само информация – не е съвет за залагане. Залагайте отговорно и само суми, които можете да загубите (18+).
 Коефициентите са от момента на сигнала; преди залог проверете дали са същите или по-високи.</footer>
 </main></body></html>
