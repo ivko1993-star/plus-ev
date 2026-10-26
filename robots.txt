@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://ivko1993-star.github.io/plus-ev/sitemap.xml
