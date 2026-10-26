@@ -41,14 +41,28 @@ header.brand { padding:18px; border-radius:16px; background:linear-gradient(135d
 .live { color:var(--red); font-size:12px; font-weight:600; margin-left:4px; }
 .tg:hover { background:#1b8bc0; } .btns { display:flex; flex-wrap:wrap; gap:10px; } .tg.fb { background:#1877F2; } .tg.don { background:#f5a524; color:#1a1300; } .tg.ads { margin:10px 0 0; background:var(--accent); }
 .share { display:flex; flex-wrap:wrap; gap:8px; align-items:center; margin-top:24px; color:var(--muted); font-size:14px; } .share a { padding:6px 12px; border:1px solid var(--line); border-radius:999px; color:var(--text); text-decoration:none; background:var(--card); }
-.ads { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:10px; margin-top:14px; } .ads .adslot { margin:0; }
+.ads { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:12px; margin-top:14px; }
+.promo { position:relative; overflow:hidden; display:flex; align-items:center; gap:14px; padding:16px 18px; border-radius:14px; text-decoration:none; color:#fff;
+  background:linear-gradient(120deg, var(--c), color-mix(in srgb, var(--c) 55%, #000)); box-shadow:0 6px 18px color-mix(in srgb, var(--c) 35%, transparent);
+  transition:transform .25s ease, box-shadow .25s ease; }
+.promo:hover { transform:translateY(-3px) scale(1.01); box-shadow:0 10px 26px color-mix(in srgb, var(--c) 50%, transparent); }
+.promo::after { content:""; position:absolute; top:0; left:-60%; width:40%; height:100%; background:linear-gradient(100deg, transparent, rgba(255,255,255,.35), transparent);
+  transform:skewX(-20deg); animation:shine 3.2s ease-in-out infinite; }
+.promo .ico { font-size:34px; line-height:1; animation:bounce 1.8s ease-in-out infinite; }
+.promo .ptxt { display:flex; flex-direction:column; flex:1; } .promo .ptxt b { font-size:18px; } .promo .ptxt small { opacity:.9; font-size:13px; }
+.promo .cta { background:#fff; color:var(--c); font-weight:700; font-size:14px; padding:8px 14px; border-radius:999px; white-space:nowrap; animation:pulse 2s ease-in-out infinite; }
+.promo .tag { position:absolute; top:5px; right:9px; font-style:normal; font-size:10px; opacity:.6; letter-spacing:.3px; }
+@keyframes shine { 0%, 55% { left:-60%; } 100% { left:130%; } }
+@keyframes bounce { 0%, 100% { transform:translateY(0) rotate(0); } 50% { transform:translateY(-6px) rotate(-12deg); } }
+@keyframes pulse { 0%, 100% { transform:scale(1); } 50% { transform:scale(1.07); } }
+@media (prefers-reduced-motion: reduce) { .promo::after, .promo .ico, .promo .cta { animation:none; } }
 .adslot { display:flex; flex-direction:column; align-items:center; gap:4px; margin:14px 0 0; padding:16px; border-radius:12px; background:var(--card); border:1px solid var(--line); color:var(--text); text-decoration:none; text-align:center; }
 .adslot span { color:var(--muted); font-size:12px; } .adslot img { max-width:100%; border-radius:8px; }
 .empty-ad { border:2px dashed var(--line); } .empty-ad:hover { border-color:var(--accent); }
 </style></head>
 <body><main>
 <header class="brand"><img src="logo.png" alt="" width="56" height="56"><h1>+EV Сигнали</h1></header>
-<p class="sub">Подбрани залози с висок шанс и добър коефициент: <b>победа на фаворит</b>, <b>над 2.5 гола</b>, <b>над 1.5 гола</b> и <b>гол-гол</b>. Обновено: 26.10.2026 09:48</p>
+<p class="sub">Подбрани залози с висок шанс и добър коефициент: <b>победа на фаворит</b>, <b>над 2.5 гола</b>, <b>над 1.5 гола</b> и <b>гол-гол</b>. Обновено: 26.10.2026 09:51</p>
 <div class="btns"><a class="tg" href="https://t.me/+674DZJM1EcZlZDc0" target="_blank" rel="noopener">📢 Влез в Telegram канала</a><a class="tg fb" href="https://www.facebook.com/plusevsignali" target="_blank" rel="noopener">👍 Facebook страница</a><a class="tg don" href="https://t.me/ivko_value_signals_bot?start=donate" target="_blank" rel="noopener">☕ Подкрепи ни</a></div>
 <div class="stats">
 <div class="stat"><b>5</b><span>приключили сигнала</span></div>
@@ -58,7 +72,7 @@ header.brand { padding:18px; border-radius:16px; background:linear-gradient(135d
 <div class="stat"><b>2</b><span>предстоящи</span></div>
 </div>
 <div class='chart'><div class='chart-head'><span>Натрупана печалба при 20 € на сигнал</span><b class='pos'>+49.80 €</b></div><svg viewBox='0 0 600 170' preserveAspectRatio='none' role='img' aria-label='Натрупана печалба: +49.80 €'><line class='zero' x1='14' x2='586' y1='156.0' y2='156.0'/><polygon class='area' points='14.0,156.0 14.0,156.0 128.4,128.6 242.8,109.8 357.2,64.2 471.6,36.8 586.0,14.0 586.0,156.0'/><polyline class='ln' points='14.0,156.0 128.4,128.6 242.8,109.8 357.2,64.2 471.6,36.8 586.0,14.0'/><g class='pt'><rect x='71.2' y='0' width='114.4' height='170' fill='transparent'/><circle cx='128.4' cy='128.6' r='4'/><title>Lazio – Parma – Победа: Lazio: +9.60 € · общо +9.60 €</title></g><g class='pt'><rect x='185.6' y='0' width='114.4' height='170' fill='transparent'/><circle cx='242.8' cy='109.8' r='4'/><title>FC Tokyo – Mito Hollyhock – Победа: FC Tokyo: +6.60 € · общо +16.20 €</title></g><g class='pt'><rect x='300.0' y='0' width='114.4' height='170' fill='transparent'/><circle cx='357.2' cy='64.2' r='4'/><title>Man Utd – Bournemouth – Над 2.5 гола: +16.00 € · общо +32.20 €</title></g><g class='pt'><rect x='414.4' y='0' width='114.4' height='170' fill='transparent'/><circle cx='471.6' cy='36.8' r='4'/><title>SC Freiburg – Bayern Munich – Победа: Bayern Munich: +9.60 € · общо +41.80 €</title></g><g class='pt'><rect x='528.8' y='0' width='114.4' height='170' fill='transparent'/><circle cx='586.0' cy='14.0' r='4'/><title>Molde FK – Fredrikstad FK – Победа: Molde FK: +8.00 € · общо +49.80 €</title></g></svg></div>
-<div class="ads"><a class="adslot" href="https://profitshare.bg/l/3991968" target="_blank" rel="sponsored noopener"><span>Реклама · партньорски линк</span><b>⚽ Футболни обувки, топки и екипи – Decathlon</b></a><a class="adslot" href="https://profitshare.bg/l/3991971" target="_blank" rel="sponsored noopener"><span>Реклама · партньорски линк</span><b>🏟️ Футболни топки в eMAG</b></a></div>
+<div class="ads"><a class="promo" href="https://profitshare.bg/l/3991968" target="_blank" rel="sponsored noopener" style="--c:#0082C3"><i class="tag">реклама</i><span class="ico">⚽</span><span class="ptxt"><b>Decathlon</b><small>Футболни обувки, топки и екипи</small></span><span class="cta">Виж →</span></a><a class="promo" href="https://profitshare.bg/l/3991971" target="_blank" rel="sponsored noopener" style="--c:#E4002B"><i class="tag">реклама</i><span class="ico">🏆</span><span class="ptxt"><b>eMAG</b><small>Футболни топки на добри цени</small></span><span class="cta">Виж →</span></a></div>
 <h2>Предстоящи сигнали</h2>
 <ul><li class='card'><div class='top'><span class='time'>26.10 20:00</span><span class='lg'>Дания</span></div><div class='match'>FC København – Odense Boldklub</div><div class='pick'>🏆 Победа: FC København</div><div class='meta'>Коефициент <b>1.45</b> · шанс 66%</div><div class='eur'>При залог 20 € → печалба <b>+9.00 €</b> (връщат ти 29.00 €)</div></li><li class='card'><div class='top'><span class='time'>26.10 20:45</span><span class='lg'>Португалия</span></div><div class='match'>Santa Clara – Benfica</div><div class='pick'>🏆 Победа: Benfica</div><div class='meta'>Коефициент <b>1.33</b> · шанс 72%</div><div class='eur'>При залог 20 € → печалба <b>+6.60 €</b> (връщат ти 26.60 €)</div></li></ul>
 <h2>Резултати</h2>
