@@ -90,6 +90,18 @@ header.brand { padding:18px; border-radius:16px; background:linear-gradient(135d
 @media (prefers-reduced-motion: reduce) { .promo::after, .promo .ico, .promo .cta, .mon .slide { transition:none; } }
 .adslot { display:flex; flex-direction:column; align-items:center; gap:4px; margin:14px 0 0; padding:16px; border-radius:12px; background:var(--card); border:1px solid var(--line); color:var(--text); text-decoration:none; text-align:center; }
 .adslot span { color:var(--muted); font-size:12px; } .adslot img { max-width:100%; border-radius:8px; }
+.guide { margin:0 0 18px; background:var(--card); border:1px solid var(--line); border-radius:14px; overflow:hidden; }
+.guide-head { display:flex; align-items:center; gap:12px; padding:14px 16px; background:linear-gradient(135deg, rgba(11,122,90,.14), rgba(34,158,217,.08)); border-bottom:1px solid var(--line); }
+.guide-head .gi { font-size:26px; } .guide-head b { display:block; font-size:17px; } .guide-head small { color:var(--muted); font-size:13px; }
+.guide details { border-bottom:1px solid var(--line); }
+.guide summary { list-style:none; cursor:pointer; display:flex; align-items:center; gap:10px; padding:12px 16px; font-weight:600; }
+.guide summary::-webkit-details-marker { display:none; }
+.guide summary::after { content:"›"; margin-left:auto; color:var(--muted); font-size:20px; transition:transform .2s ease; }
+.guide details[open] summary::after { transform:rotate(90deg); }
+.guide summary:hover { background:color-mix(in srgb, var(--accent) 6%, transparent); }
+.guide .n { flex:0 0 24px; height:24px; border-radius:50%; background:var(--accent); color:#fff; font-size:13px; display:flex; align-items:center; justify-content:center; }
+.guide details p { margin:0; padding:0 16px 14px 50px; color:var(--muted); font-size:14px; } .guide details p b { color:var(--text); }
+.guide-foot { margin:0; padding:10px 16px; color:var(--muted); font-size:12px; }
 .calc label { display:block; font-weight:600; margin-bottom:8px; }
 .calc-in { display:flex; align-items:center; gap:8px; max-width:260px; }
 .calc-in input { flex:1; min-width:0; font:inherit; font-size:18px; padding:9px 12px; border:1px solid var(--line); border-radius:10px; background:var(--bg); color:var(--text); }
@@ -102,8 +114,18 @@ header.brand { padding:18px; border-radius:16px; background:linear-gradient(135d
 </style></head>
 <body><main>
 <header class="brand"><img src="logo.png" alt="" width="56" height="56"><h1>+EV Сигнали</h1></header>
-<p class="sub"><b>Залози със стойност</b> – само когато коефициентът е по-висок от честния. Всички резултати са публични. Обновено: 27.10.2026 10:56</p>
+<p class="sub"><b>Залози със стойност</b> – само когато коефициентът е по-висок от честния. Всички резултати са публични. Обновено: 27.10.2026 10:59</p>
 <div class="btns"><a class="tg" href="https://t.me/+674DZJM1EcZlZDc0" target="_blank" rel="noopener">📢 Влез в Telegram канала</a><a class="tg fb" href="https://www.facebook.com/plusevsignali" target="_blank" rel="noopener">👍 Facebook страница</a><a class="tg don" href="https://t.me/ivko_value_signals_bot?start=donate" target="_blank" rel="noopener">☕ Подкрепи ни</a></div>
+<section class="guide" aria-label="Съветник за залозите">
+<div class="guide-head"><span class="gi">🧭</span><div><b>Съветник за залозите</b><small>Как да играеш по нашата система – 6 правила</small></div></div>
+<details open><summary><span class="n">1</span>Отдели банка</summary><p>Реши каква сума отделяш <b>само за залози</b> – пари, без които можеш. Не добавяй към нея след загуба и не теглиш от нея за всеки залог. Всичко по-долу се смята като % от тази банка.</p></details>
+<details><summary><span class="n">2</span>Залагай % от банката според шанса</summary><p>По-висок шанс – по-голям залог: <b>3%</b> при шанс 75%+, <b>2%</b> при 65–75%, <b>1.5%</b> при 55–65%, <b>1%</b> под 55%. Под всеки сигнал пише колко %, а калкулаторът по-долу го превръща в евро за твоята банка.</p></details>
+<details><summary><span class="n">3</span>Спазвай минималния коефициент</summary><p>Стойността е в цената. Залагай само ако в bet365 коефициентът е <b>същият или по-висок</b> от посочения („не под …“). Ако е паднал – пропусни сигнала. При „🔍 Кандидат“ задължително провери коефициента в приложението.</p></details>
+<details><summary><span class="n">4</span>Играй всички сигнали, не подбирай</summary><p>Предимството идва от <b>много залози</b>, не от един. Ако подбираш „по усет“, губиш точно това предимство. Еднакво правило за всеки сигнал – без изключения.</p></details>
+<details><summary><span class="n">5</span>Без гонене на загуби</summary><p>Серии от 3–5 губещи залога са нормални дори при печеливша система. <b>Никога</b> не вдигай залога, за да си върнеш загубеното, и не залагай извън сигналите.</p></details>
+<details><summary><span class="n">6</span>Преизчислявай банката веднъж седмично</summary><p>В началото на седмицата смятай процентите от <b>актуалната</b> банка: расте ли – залозите растат, пада ли – намаляват сами. Оценявай резултата след поне 100 залога, не след ден-два.</p></details>
+<p class="guide-foot">Само информация, не е съвет за залагане. Залагай отговорно (18+).</p>
+</section>
 <div class="stats">
 <div class="stat"><b>9</b><span>приключили сигнала</span></div>
 <div class="stat"><b>8 / 1</b><span>печеливши / губещи</span></div>
