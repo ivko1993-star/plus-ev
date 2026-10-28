@@ -10,6 +10,15 @@
 :root { --bg:#f6f7f9; --card:#fff; --text:#16181d; --muted:#667085; --line:#e4e7ec; --green:#12805c; --red:#c0362c; --accent:#0b7a5a; }
 @media (prefers-color-scheme: dark) { :root { --bg:#0e1116; --card:#161b22; --text:#e6e9ef; --muted:#98a2b3; --line:#283041; --green:#3ccf91; --red:#ff6b5e; --accent:#3ccf91; } }
 * { box-sizing:border-box; } body { margin:0; background:var(--bg); color:var(--text); font:15px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; }
+/* бледен фон (28.10.2026): мек зелен градиент + едва видими линии на игрище */
+body { background:
+  radial-gradient(1200px 600px at 10% -10%, var(--glow1), transparent 60%),
+  radial-gradient(900px 500px at 110% 10%, var(--glow2), transparent 60%),
+  linear-gradient(180deg, var(--bg) 0%, var(--bg2) 100%) fixed; background-color:var(--bg); }
+body::before { content:""; position:fixed; inset:0; z-index:-1; pointer-events:none; opacity:var(--pitch);
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800' fill='none' stroke='%2312805c' stroke-width='3'%3E%3Crect x='40' y='40' width='1120' height='720' rx='8'/%3E%3Cline x1='600' y1='40' x2='600' y2='760'/%3E%3Ccircle cx='600' cy='400' r='110'/%3E%3Ccircle cx='600' cy='400' r='5' fill='%2312805c'/%3E%3Crect x='40' y='220' width='170' height='360'/%3E%3Crect x='990' y='220' width='170' height='360'/%3E%3Crect x='40' y='320' width='60' height='160'/%3E%3Crect x='1100' y='320' width='60' height='160'/%3E%3C/svg%3E") center / min(1400px, 140vw) no-repeat; }
+:root { --glow1:rgba(18,128,92,.18); --glow2:rgba(11,122,90,.14); --bg2:#e3efe8; --pitch:.13; }
+@media (prefers-color-scheme: dark) { :root { --glow1:rgba(60,207,145,.14); --glow2:rgba(60,207,145,.09); --bg2:#0c2219; --pitch:.11; } }
 main { max-width:860px; margin:0 auto; padding:24px 16px 48px; }
 h1 { font-size:26px; margin:0; } .brand { display:flex; align-items:center; gap:12px; margin-bottom:8px; } .brand img { border-radius:50%; } h2 { font-size:18px; margin:28px 0 10px; }
 .sub { color:var(--muted); margin:0 0 18px; }
@@ -152,7 +161,7 @@ tr.played td { background:color-mix(in srgb, var(--accent) 7%, transparent); }
 <body><main>
 <div id="nudge" hidden><span class="bell">🔔</span><button class="go" type="button"><b></b><small></small></button><span class="arr">Виж ↓</span><button class="x" type="button" aria-label="Скрий">×</button></div>
 <header class="brand"><a class="logo" href="./" title="Обнови" onclick="location.replace(location.pathname + '?r=' + Date.now()); return false"><img src="logo.png" alt="Обнови" width="56" height="56"></a><h1>+EV Сигнали</h1></header>
-<p class="sub"><b>Залози със стойност</b> – само когато коефициентът е по-висок от честния. Всички резултати са публични. Обновено: 28.10.2026 17:06</p>
+<p class="sub"><b>Залози със стойност</b> – само когато коефициентът е по-висок от честния. Всички резултати са публични. Обновено: 28.10.2026 17:16</p>
 <div class="btns"><a class="tg" href="https://t.me/+674DZJM1EcZlZDc0" target="_blank" rel="noopener">📢 Влез в Telegram канала</a><a class="tg fb" href="https://www.facebook.com/plusevsignali" target="_blank" rel="noopener">👍 Facebook страница</a><a class="tg don" href="https://t.me/ivko_value_signals_bot?start=donate" target="_blank" rel="noopener">☕ Подкрепи ни</a></div>
 <section class="guide" aria-label="Съветник за залозите">
 <div class="guide-head"><span class="gi">⚠️</span><div><b>Преди да играете – прочетете!</b><small>Съветник за залозите: как да играете по нашата система – 6 правила</small></div></div>
