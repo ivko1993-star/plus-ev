@@ -25,6 +25,8 @@ h1 { font-size:26px; margin:0; } .brand { display:flex; align-items:center; gap:
 .stats { display:grid; grid-template-columns:repeat(auto-fit,minmax(130px,1fr)); gap:10px; }
 .stat { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:12px 14px; }
 .stat b { display:block; font-size:22px; } .stat span { color:var(--muted); font-size:13px; }
+@media (max-width:640px) { .sub { margin:0 0 10px; font-size:14px; } .btns { gap:6px; margin-bottom:12px; } .btns .tg { margin:0; padding:7px 10px; font-size:13px; }
+  .stats { grid-template-columns:repeat(4,1fr); gap:6px; } .stat { padding:8px 6px; text-align:center; } .stat b { font-size:16px; } .stat span { font-size:10px; line-height:1.2; display:block; } .stat.up-count { display:none; } }
 ul { list-style:none; padding:0; margin:0; display:grid; gap:10px; }
 .card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:12px 14px; }
 .top { display:flex; justify-content:space-between; color:var(--muted); font-size:13px; gap:8px; }
@@ -166,14 +168,14 @@ tr.played td { background:color-mix(in srgb, var(--accent) 7%, transparent); }
 <body><main>
 <div id="nudge" hidden><span class="bell">🔔</span><button class="go" type="button"><b></b><small></small></button><span class="arr">Виж ↓</span><button class="x" type="button" aria-label="Скрий">×</button></div>
 <header class="brand"><a class="logo" href="./" title="Обнови" onclick="location.replace(location.pathname + '?r=' + Date.now()); return false"><img src="logo.png" alt="Обнови" width="56" height="56"></a><h1>+EV Сигнали</h1></header>
-<p class="sub"><b>Залози със стойност</b> – само когато коефициентът е по-висок от честния. Всички резултати са публични. Обновено: 29.10.2026 13:23</p>
+<p class="sub"><b>Залози със стойност</b> – само когато коефициентът е по-висок от честния. Всички резултати са публични. Обновено: 29.10.2026 13:25</p>
 <div class="btns"><a class="tg" href="https://t.me/+674DZJM1EcZlZDc0" target="_blank" rel="noopener">📢 Влез в Telegram канала</a><a class="tg fb" href="https://www.facebook.com/plusevsignali" target="_blank" rel="noopener">👍 Facebook страница</a><a class="tg don" href="https://t.me/ivko_value_signals_bot?start=donate" target="_blank" rel="noopener">☕ Подкрепи ни</a></div>
 <div class="stats">
 <div class="stat"><b>46</b><span>приключили сигнала</span></div>
 <div class="stat"><b>26 / 17</b><span>печеливши / губещи</span></div>
-<div class="stat"><b class="pos">+7.03%</b><span>ръст на банката (залог 1–3 % според шанса)</span></div>
+<div class="stat"><b class="pos">+7.03%</b><span>ръст на банката</span></div>
 <div class="stat"><b>+10.8%</b><span>ROI (възвръщаемост)</span></div>
-<div class="stat"><b>6</b><span>предстоящи</span></div>
+<div class="stat up-count"><b>6</b><span>предстоящи</span></div>
 </div>
 <h2>Предстоящи сигнали</h2>
 <p class="mk-hint">Отбелязвай с <b>✓ Заложих</b> какво вече си заложил – вижда се само на твоето устройство. <span id="mk-count"></span></p>
