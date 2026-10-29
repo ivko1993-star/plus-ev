@@ -34,7 +34,7 @@ i.flag { display:inline-block; width:18px; height:13px; border-radius:2px; verti
 <h1>EV калкулатор за залози (стойност и марж)</h1>
 <p class='lead'>Провери дали един коефициент има стойност (+EV), какъв е честният коефициент без маржа на букмейкъра и колко
 от банката е разумно да заложиш. Всичко се смята в браузъра ти – нищо не се изпраща.</p>
-<div class='tabs'><button class='on' data-t='ev'>Стойност на залог</button><button data-t='mg'>Марж и честен шанс</button></div>
+<div class='tabs'><button class='on' data-t='ev'>Стойност на залог</button><button data-t='mg'>Марж и честен шанс</button><button data-t='dn'>Без равен (DNB)</button></div>
 <div class='card calc' id='ev'>
   <div class='row'><div><label for='o'>Коефициент на букмейкъра</label><input id='o' type='number' step='0.01' min='1.01' value='2.10' inputmode='decimal'></div>
   <div><label for='p'>Твоят (честен) шанс, %</label><input id='p' type='number' step='0.1' min='0.1' max='99.9' value='50' inputmode='decimal'></div></div>
@@ -47,9 +47,17 @@ i.flag { display:inline-block; width:18px; height:13px; border-radius:2px; verti
   <div><label for='c'>Изход 3 (ако има)</label><input id='c' type='number' step='0.01' min='1.01' value='3.80' inputmode='decimal'></div></div>
   <div id='mgr'></div>
 </div>
+<div class='card calc' id='dn' hidden>
+  <p class='t'>При „Без равен“ изходите са три: победа, равен (залогът се връща) и загуба.</p>
+  <div class='row'><div><label for='do'>Коефициент „без равен“</label><input id='do' type='number' step='0.01' min='1.01' value='2.25' inputmode='decimal'></div>
+  <div><label for='dw'>Шанс за победа, %</label><input id='dw' type='number' step='0.1' min='0' max='100' value='32.3' inputmode='decimal'></div>
+  <div><label for='dd'>Шанс за равен, %</label><input id='dd' type='number' step='0.1' min='0' max='99' value='29.8' inputmode='decimal'></div></div>
+  <div id='dnr'></div>
+</div>
 <h2>Как се смята</h2>
 <p><b>Очаквана стойност (EV)</b> = коефициент × шанс − 1. Пример: 2.10 × 0.50 − 1 = <b>+5%</b> – при много такива залози
 средно печелиш 5% от заложеното. Под 0 залогът губи в дългосрочен план, колкото и „сигурен“ да изглежда.</p>
+<p><b>Без равен</b>: EV = шанс за победа × (коеф. − 1) − шанс за загуба; равенът дава 0. Същото е (1 − шанс за равен) × (коеф. × шанс при решен мач − 1).</p>
 <p><b>Честен коефициент</b> = 1 / шанс. Ако коефициентът на букмейкъра е над честния – има стойност.</p>
 <p><b>Марж</b>: сборът от 1/коефициент за всички изходи е над 100% – разликата е печалбата на букмейкъра. Делим всеки
 изход на сбора и получаваме честния шанс без маржа. Най-точен е, когато взимаш коефициентите от пазар с малък марж.</p>
@@ -79,12 +87,21 @@ function mg() {
     `<tr><td>${i + 1}</td><td>${x.toFixed(2)}</td><td>${(100 * inv[i] / s).toFixed(1)}%</td><td>${(s / inv[i]).toFixed(2)}</td></tr>`).join('')
     + '</table><p class="t">Честният шанс от тук може да го сложиш в „Стойност на залог“ срещу коефициент от друг букмейкър.</p>';
 }
-document.querySelectorAll('.calc input').forEach(i => i.addEventListener('input', () => { ev(); mg(); }));
+function dnb() {
+  const o = num('do'), w = num('dw') / 100, d = num('dd') / 100, l = 1 - w - d;
+  if (!(o > 1) || !(w > 0) || !(d >= 0) || l < 0) { $('dnr').innerHTML = '<p>Въведи коефициент над 1 и шансове, които заедно са под 100%.</p>'; return; }
+  const v = w * (o - 1) - l, pc_ = w / (w + l);
+  $('dnr').innerHTML = `<p>Стойност върху целия залог: <span class='big ${v >= 0 ? 'w' : 'l'}'>${pc(v)}</span></p>
+    <p>Шанс за загуба: <b>${(100 * l).toFixed(1)}%</b> · шанс за победа при решен мач: <b>${(100 * pc_).toFixed(1)}%</b>
+    (честен коефициент „без равен“ ${(1 / pc_).toFixed(2)})</p>
+    <p class='t'>Ако сметнеш само с шанса при решен мач (${o.toFixed(2)} × ${pc_.toFixed(3)} − 1 = ${pc(o * pc_ - 1)}), стойността излиза по-висока – равените не носят печалба.</p>`;
+}
+document.querySelectorAll('.calc input').forEach(i => i.addEventListener('input', () => { ev(); mg(); dnb(); }));
 document.querySelectorAll('.tabs button').forEach(b => b.addEventListener('click', () => {
   document.querySelectorAll('.tabs button').forEach(x => x.classList.toggle('on', x === b));
-  $('ev').hidden = b.dataset.t !== 'ev'; $('mg').hidden = b.dataset.t !== 'mg';
+  $('ev').hidden = b.dataset.t !== 'ev'; $('mg').hidden = b.dataset.t !== 'mg'; $('dn').hidden = b.dataset.t !== 'dn';
 }));
-ev(); mg();
+ev(); mg(); dnb();
 </script>
 <p><a class="cta" href="https://t.me/+674DZJM1EcZlZDc0" target="_blank" rel="noopener">📢 Сигналите идват първо в Telegram</a></p>
 <footer><a href="uspevaemost.html">Успеваемост</a> · <a href="kakvo-e-ev.html">Какво е +EV залог</a> · <a href="kalkulator.html">EV калкулатор</a> · <a href="metodologiya.html">Методология</a> · <a href="za-nas.html">За нас</a> · <a href="privacy.html">Поверителност</a><br>Само информация – не е съвет за залагане. Залагайте отговорно (18+).</footer>
