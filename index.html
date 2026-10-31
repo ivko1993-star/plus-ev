@@ -280,6 +280,7 @@ tr.played td { background:color-mix(in srgb, var(--accent) 7%, transparent); }
 
 <main>
 <div id="x-new" hidden><b></b><button type="button">Обнови</button></div>
+<p id="x-ios-state" class="mk-hint" hidden></p>
 <p id="x-ios" class="mk-hint" hidden>За известия на iPhone: натисни „Сподели“, после „Добави към началния екран“ и отвори сайта оттам.</p>
 <div id="nudge" hidden><span class="bell">🔔</span><button class="go" type="button"><b></b><small></small></button><span class="arr">Виж ↓</span><button class="x" type="button" aria-label="Скрий">×</button></div>
 
@@ -325,7 +326,7 @@ tr.played td { background:color-mix(in srgb, var(--accent) 7%, transparent); }
 <div class="share"><span>Сподели с приятел:</span><a href="https://t.me/share/url?url=https%3A%2F%2Fplusevsignali.com%2F&text=%E2%9A%BD%20%D0%91%D0%B5%D0%B7%D0%BF%D0%BB%D0%B0%D1%82%D0%BD%D0%B8%20%D1%84%D1%83%D1%82%D0%B1%D0%BE%D0%BB%D0%BD%D0%B8%20%D0%BF%D1%80%D0%BE%D0%B3%D0%BD%D0%BE%D0%B7%D0%B8%20%D0%B7%D0%B0%20%D0%B4%D0%BD%D0%B5%D1%81%3A" target="_blank" rel="noopener">Telegram</a><a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fplusevsignali.com%2F" target="_blank" rel="noopener">Facebook</a><a href="viber://forward?text=%E2%9A%BD%20%D0%91%D0%B5%D0%B7%D0%BF%D0%BB%D0%B0%D1%82%D0%BD%D0%B8%20%D1%84%D1%83%D1%82%D0%B1%D0%BE%D0%BB%D0%BD%D0%B8%20%D0%BF%D1%80%D0%BE%D0%B3%D0%BD%D0%BE%D0%B7%D0%B8%20%D0%B7%D0%B0%20%D0%B4%D0%BD%D0%B5%D1%81%3A%20https%3A%2F%2Fplusevsignali.com%2F">Viber</a></div>
 <footer><a href="prognozi/">Прогнози по дни</a> · <a href="uspevaemost.html">Успеваемост</a> · <a href="kakvo-e-ev.html">Какво е +EV залог</a> · <a href="kalkulator.html">EV калкулатор</a> · <a href="metodologiya.html">Методология</a> · <a href="za-nas.html">За нас и контакт</a> · <a href="https://t.me/ivko_value_signals_bot?start=err" target="_blank" rel="noopener">Съобщи за грешка</a> · <a href="privacy.html">Поверителност</a> · Само информация – не е съвет за залагане. Залагайте отговорно и само суми, които можете да загубите (18+).
 Коефициентите са от момента на сигнала; преди залог проверете дали са същите или по-високи.
-<p class="foot-t">Обновено: 31.10.2026 14:02 · последна проверка на коефициентите: 31.10 14:02 · <a href="https://t.me/ivko_value_signals_bot?start=err" target="_blank" rel="noopener">🛠 Съобщи за грешка</a></p></footer>
+<p class="foot-t">Обновено: 31.10.2026 14:12 · последна проверка на коефициентите: 31.10 14:02 · <a href="https://t.me/ivko_value_signals_bot?start=err" target="_blank" rel="noopener">🛠 Съобщи за грешка</a></p></footer>
 </main><script>
 (function () {   // „✓ Заложих“ – всеки посетител си отбелязва своите залози; пази се само в неговия браузър
   var KEY = 'played', set = {};
@@ -380,7 +381,17 @@ tr.played td { background:color-mix(in srgb, var(--accent) 7%, transparent); }
   if (!bar) return;
   var known = null, supported = 'Notification' in window, app = document.documentElement.dataset.push || '';
   var opted = null;   // при OneSignal важи дали устройството е абонирано, не само разрешението на браузъра
-  function on() { return supported && Notification.permission === 'granted' && opted !== false; }
+  // при OneSignal „включени“ значи истински абонамент, не само разрешение от браузъра
+  function on() { return supported && Notification.permission === 'granted' && (app ? opted === true : true); }
+  var ios = /iPhone|iPad/.test(navigator.userAgent), last = '';
+  window.addEventListener('unhandledrejection', function (e) { last = String(e.reason && e.reason.message || e.reason).slice(0, 90); state(); });
+  function state() {   // само на iPhone: кратък ред, по който се вижда къде спира абонирането
+    var el = document.getElementById('x-ios-state'); if (!el || !ios) return;
+    var S = window.OneSignal && OneSignal.User && OneSignal.User.PushSubscription;
+    el.hidden = false;
+    el.textContent = 'Проверка: начален екран ' + (navigator.standalone ? 'да' : 'не') + ' · разрешение ' + (supported ? Notification.permission : 'няма') +
+      ' · услуга ' + (S ? 'да' : 'не') + ' · абонамент ' + (S && S.optedIn ? 'да' : 'не') + ' · номер ' + (S && S.id ? 'да' : 'не') + ' · ключ ' + (S && S.token ? 'да' : 'не') + (last ? ' · ' + last : '');
+  }
   function paint() {
     if (!bell) return;
     if (!supported) {   // iPhone в браузъра: известията работят само след добавяне към началния екран
@@ -390,11 +401,16 @@ tr.played td { background:color-mix(in srgb, var(--accent) 7%, transparent); }
     bell.hidden = false;
     bell.querySelector('span').textContent = on() ? 'Известията са включени' : Notification.permission === 'denied' ? 'Известията са блокирани' : 'Включи известията';
     bell.disabled = on() || Notification.permission === 'denied';
+    state();
   }
   if (bell) bell.addEventListener('click', function () {
     if (app && window.OneSignalDeferred) {
       OneSignalDeferred.push(function (OS) {
-        return OS.User.PushSubscription.optIn().then(function () { opted = OS.User.PushSubscription.optedIn; paint(); });
+        var ask = Notification.permission === 'granted' ? Promise.resolve() : OS.Notifications.requestPermission();
+        return ask.then(function () { return OS.User.PushSubscription.optIn(); }).then(function () {
+          opted = OS.User.PushSubscription.optedIn; paint();
+          setTimeout(paint, 4000);   // номерът и ключът идват малко по-късно
+        }).catch(function (e) { last = String(e && e.message || e).slice(0, 90); paint(); });
       });
     } else if (supported) {
       Notification.requestPermission().then(paint);
