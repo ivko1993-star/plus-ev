@@ -43,7 +43,7 @@ i.flag { display:inline-block; width:18px; height:13px; border-radius:2px; verti
 .tabs button { padding:8px 14px; border-radius:20px; border:1px solid var(--line); background:var(--card); color:var(--text);
   font-size:14px; cursor:pointer; } .tabs button.on { background:var(--accent); color:#fff; border-color:var(--accent); }
 </style><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7252869771898056" crossorigin="anonymous"></script></head>
-<body><header class="topbar"><div class="tb-in"><a class="logo" href="./" title="Начало"><img src="logo.png" alt="+EV Сигнали" width="42" height="42"></a><div class="brand-t"><a class="tb-name" href="./">+EV Сигнали</a><p>Футболни прогнози за днес</p></div><nav class="tb-nav" aria-label="Меню"><a href='./#x-singles'>Прогнози</a><a href='./#x-builders'>Билдъри</a><a href='./#x-model'>Наш модел</a><a href='klasirane.html'>Класиране</a><a href='./#rezultati'>Резултати</a><a href='uspevaemost.html'>Успеваемост</a><a class='on' href='kalkulator.html'>Калкулатор</a></nav></div></header>
+<body><header class="topbar"><div class="tb-in"><a class="logo" href="./" title="Начало"><img src="logo.png" alt="+EV Сигнали" width="42" height="42"></a><div class="brand-t"><a class="tb-name" href="./">+EV Сигнали</a><p>Футболни прогнози за днес</p></div><nav class="tb-nav" aria-label="Меню"><a href='./'>Прогнози</a><a href='klasirane.html'>Класиране</a><a class='on' href='kalkulator.html'>Калкулатор</a><a href='metodologiya.html'>Методология</a></nav></div></header>
 <script>(()=>{const b=document.createElement('div');b.className='tip-box';b.hidden=true;let cur=null;const hide=()=>{b.hidden=true;cur=null},show=t=>{if(!b.isConnected)document.body.append(b);cur=t;b.textContent=t.dataset.tip;b.hidden=false;const r=t.getBoundingClientRect(),w=b.offsetWidth,h=b.offsetHeight,x=Math.max(8,Math.min(innerWidth-w-8,r.left+r.width/2-w/2)),y=r.top-h-8;b.style.left=x+'px';b.style.top=(y<8?r.bottom+8:y)+'px'};document.addEventListener('mouseover',e=>{const t=e.target.closest&&e.target.closest('.tip');if(t)show(t);else if(cur&&document.activeElement!==cur)hide()});document.addEventListener('focusin',e=>{const t=e.target.closest&&e.target.closest('.tip');if(t)show(t)});document.addEventListener('focusout',hide);addEventListener('scroll',hide,{passive:true});document.addEventListener('click',e=>{const t=e.target.closest&&e.target.closest('.tip');if(t){e.preventDefault();e.stopPropagation();t.focus();show(t)}},true)})()</script>
 <main>
 <h1>EV калкулатор за залози (стойност и марж)</h1>
@@ -77,8 +77,7 @@ i.flag { display:inline-block; width:18px; height:13px; border-radius:2px; verti
 <p><b>Марж</b>: сборът от 1/коефициент за всички изходи е над 100% – разликата е печалбата на букмейкъра. Делим всеки
 изход на сбора и получаваме честния шанс без маржа. Най-точен е, когато взимаш коефициентите от пазар с малък марж.</p>
 <p><b>Залог</b>: следва шанса. Под 50% шанс е 0.5% от банката, от 50 до 65% е 1%, а над 65% е 1.5%. По-висок шанс не значи, че цената има стойност: това се вижда отделно в реда „Очаквана стойност“.</p>
-<p>Нашите сигнали са избрани точно така (поне +3% стойност) – <a href='uspevaemost.html'>резултатите им</a> ·
-<a href='kakvo-e-ev.html'>какво е +EV залог</a> · <a href='uspevaemost.html'>успеваемост</a>.</p>
+<p><a href='kakvo-e-ev.html'>Какво е +EV залог</a> · <a href='metodologiya.html'>Методология</a></p>
 <script>
 const $ = id => document.getElementById(id), num = id => parseFloat(($(id).value || '').replace(',', '.'));
 const pc = x => (x >= 0 ? '+' : '') + (100 * x).toFixed(1) + '%';
