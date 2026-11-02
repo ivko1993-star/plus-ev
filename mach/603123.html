@@ -1,0 +1,476 @@
+<!doctype html><html lang="bg"><head><meta charset="utf-8"><base href="/"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Amora FC – GD Alcochetense · +EV Сигнали</title><meta name="description" content="Прогнозите на нашия модел с шанс от 70% нагоре и крайните резултати."><link rel="icon" href="favicon.png"><meta name="color-scheme" content="light dark"><link rel="manifest" href="manifest.json"><script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script><script>window.OneSignalDeferred=window.OneSignalDeferred||[];OneSignalDeferred.push(function(OS){return OS.init({appId:"bc8ed12b-bce1-4f40-9329-0278463a1de7"});});</script><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7252869771898056" crossorigin="anonymous"></script><style>
+:root { color-scheme:light; --bg:#f3fbf7; --card:#fff; --text:#1c2b33; --muted:#5f7078; --line:#dcece4; --green:#0f9d6b; --red:#d9534f; --accent:#0f9d6b; }
+@media not all { :root { --bg:#0e1116; --card:#161b22; --text:#e6e9ef; --muted:#98a2b3; --line:#283041; --green:#3ccf91; --red:#ff6b5e; --accent:#3ccf91; } }
+* { box-sizing:border-box; } body { margin:0; background:var(--bg); color:var(--text); font:15px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; }
+/* бледен фон (28.10.2026): мек зелен градиент + едва видими линии на игрище */
+body { background:
+  radial-gradient(1200px 600px at 10% -10%, var(--glow1), transparent 60%),
+  radial-gradient(900px 500px at 110% 10%, var(--glow2), transparent 60%),
+  linear-gradient(180deg, var(--bg) 0%, var(--bg2) 100%) fixed; background-color:var(--bg); }
+body::before { content:""; position:fixed; inset:0; z-index:-1; pointer-events:none; opacity:var(--pitch);
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800' fill='none' stroke='%2312805c' stroke-width='3'%3E%3Crect x='40' y='40' width='1120' height='720' rx='8'/%3E%3Cline x1='600' y1='40' x2='600' y2='760'/%3E%3Ccircle cx='600' cy='400' r='110'/%3E%3Ccircle cx='600' cy='400' r='5' fill='%2312805c'/%3E%3Crect x='40' y='220' width='170' height='360'/%3E%3Crect x='990' y='220' width='170' height='360'/%3E%3Crect x='40' y='320' width='60' height='160'/%3E%3Crect x='1100' y='320' width='60' height='160'/%3E%3C/svg%3E") center / min(1400px, 140vw) no-repeat; }
+:root { --glow1:rgba(18,128,92,.18); --glow2:rgba(11,122,90,.14); --bg2:#e6f7fb; --pitch:.05; }
+@media not all { :root { --glow1:rgba(60,207,145,.14); --glow2:rgba(60,207,145,.09); --bg2:#0c2219; --pitch:.11; } }
+main { max-width:860px; margin:0 auto; padding:24px 16px 48px; }
+h1 { font-size:26px; margin:0; } .brand { display:flex; align-items:center; gap:12px; margin-bottom:8px; } .brand img { border-radius:50%; } h2 { font-size:18px; margin:28px 0 10px; }
+.sub { color:var(--muted); margin:0 0 18px; }
+.stats { display:grid; grid-template-columns:repeat(auto-fit,minmax(130px,1fr)); gap:10px; }
+.stat { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:12px 14px; }
+.stat b { display:block; font-size:22px; } .stat span { color:var(--muted); font-size:13px; }
+@media (max-width:640px) { .sub { margin:0 0 10px; font-size:14px; } .btns { gap:6px; margin-bottom:12px; } .btns .tg { margin:0; padding:7px 10px; font-size:13px; }
+  .stats { grid-template-columns:repeat(4,1fr); gap:6px; } .stat { padding:8px 6px; text-align:center; } .stat b { font-size:16px; } .stat span { font-size:10px; line-height:1.2; display:block; } .stat.up-count { display:none; } }
+ul { list-style:none; padding:0; margin:0; display:grid; gap:10px; }
+.card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:12px 14px; }
+.top { display:flex; justify-content:space-between; color:var(--muted); font-size:13px; gap:8px; }
+main a:not([class]), .mk-hint a, .pf-note a, .legend a, footer a { color:var(--accent); text-decoration:underline; text-underline-offset:2px; }
+.match { font-weight:600; margin-top:2px; } .pick { color:var(--accent); font-weight:600; } .meta { color:var(--muted); font-size:13px; }
+.empty { color:var(--muted); padding:12px; }
+.refs { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(260px,100%),1fr)); gap:10px; }
+.ref { display:flex; flex-wrap:wrap; align-items:center; gap:12px; min-width:0; background:var(--card); border:1px solid var(--line); border-radius:12px; padding:12px 14px; color:inherit; text-decoration:none; }
+.ref:hover { border-color:var(--accent); } .ref img { border-radius:12px; flex:0 0 48px; } .ref span { flex:1 1 160px; min-width:0; display:flex; flex-direction:column; }
+.ref small { color:var(--muted); font-size:13px; line-height:1.35; } .ref i { font-style:normal; color:var(--accent); font-weight:700; font-size:13px; white-space:nowrap; } @media (max-width:640px) { .ref i { flex-basis:100%; text-align:right; } }
+.ref-note { color:var(--muted); font-size:12px; margin-top:8px; }
+.legend { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:10px 14px; margin-bottom:10px; font-size:13px; } .legend p { margin:4px 0; } .legend .mv { display:inline-block; min-width:52px; font-weight:700; } .legend .lg-small { color:var(--muted); font-size:12px; } .legend .lg-stat { margin-top:6px; }
+.mv { font-size:12px; color:var(--muted); margin-top:2px; } .mv.dn { color:var(--green); } .mv.up { color:var(--red); } small.mv { font-weight:600; }
+i.flag { display:inline-block; width:20px; height:15px; border-radius:2px; vertical-align:-2px; margin-right:5px; background-size:cover; background-position:center; box-shadow:0 0 0 1px rgba(255,255,255,.15); } table.res i.flag { width:16px; height:12px; }
+.dayh { font-weight:700; font-size:15px; margin-top:8px; padding:4px 2px 0; border-bottom:2px solid var(--accent); display:flex; justify-content:space-between; align-items:baseline; } .dayh:first-child { margin-top:0; } .dayh span { color:var(--muted); font-weight:400; font-size:13px; }
+details.day { margin-bottom:8px; } details.day > summary { cursor:pointer; list-style:none; display:flex; justify-content:space-between; align-items:baseline; gap:8px; background:var(--card); border:1px solid var(--line); border-radius:12px; padding:10px 14px; font-weight:700; font-size:14px; } details.day > summary::-webkit-details-marker { display:none; } details.day > summary::before { content:'▸'; color:var(--accent); margin-right:6px; } details.day[open] > summary::before { content:'▾'; } details.day[open] > summary { border-radius:12px 12px 0 0; border-bottom:none; } details.day > summary .dn { font-style:normal; white-space:nowrap; } details.day > summary span { font-weight:400; font-size:13px; margin-left:auto; text-align:right; } details.day > summary span b { font-weight:700; } details.day .tbl { border-radius:0 0 12px 12px; } details.fut { margin-top:10px; } details.fut > summary { border-color:var(--accent); } details.fut[open] > summary { border-radius:12px; border-bottom:1px solid var(--accent); } details.fut > ul { margin-top:10px; }
+.tbl { overflow-x:auto; background:var(--card); border:1px solid var(--line); border-radius:12px; }
+table { width:100%; border-collapse:collapse; font-size:14px; } th, td { text-align:left; padding:8px 10px; border-bottom:1px solid var(--line); white-space:nowrap; }
+th { color:var(--muted); font-weight:500; } a.ml { color:inherit; text-decoration:none; border-bottom:1px dotted var(--muted); } a.ml:hover { color:var(--accent); } table.res { font-size:min(12px, calc((100vw - 32px) / 66)); } table.res th, table.res td { padding:6px 5px; } table.res td:last-child { white-space:normal; min-width:140px; } .live.lv2 { margin-left:0; font-size:11px; } table.res td:first-child, table.res th:first-child, table.res td.sc, table.res th:nth-child(3), table.res td:nth-child(5), table.res th:nth-child(5), table.res td:nth-child(6), table.res th:nth-child(6) { width:1%; } @media (max-width:640px) { table.res { font-size:10px; } table.res td:last-child { min-width:0; } table.res td, table.res th { width:auto !important; } table.res th, table.res td { white-space:normal; } table.res th, table.res td { padding:5px 3px; } } td.w { color:var(--green); font-weight:600; } td.sc { font-weight:700; } td.l { color:var(--red); font-weight:600; }
+footer { color:var(--muted); font-size:12px; margin-top:28px; }
+.tg { display:inline-block; margin:0 0 18px; padding:10px 16px; border-radius:10px; background:#229ED9; color:#fff; font-weight:600; text-decoration:none; }
+.cand { color:#b7791f; font-size:13px; font-weight:600; }
+.eur { font-size:13px; margin-top:2px; } .eur b, .pos { color:var(--green); } .neg { color:var(--red); } td small { color:var(--muted); font-weight:400; }
+.chart { margin-top:14px; background:var(--card); border:1px solid var(--line); border-radius:12px; padding:12px 14px; }
+.chart-head { display:flex; justify-content:space-between; align-items:baseline; color:var(--muted); font-size:13px; } .chart-head b { font-size:18px; }
+.chart svg { display:block; width:100%; height:150px; margin-top:6px; overflow:visible; }
+.chart .ln { fill:none; stroke:var(--accent); stroke-width:2; vector-effect:non-scaling-stroke; stroke-linejoin:round; }
+.chart .area { fill:var(--accent); opacity:.12; } .chart .zero { stroke:var(--line); stroke-width:1; vector-effect:non-scaling-stroke; }
+.chart circle { fill:var(--accent); stroke:var(--card); stroke-width:2; opacity:0; vector-effect:non-scaling-stroke; } .chart .pt:hover circle { opacity:1; }
+.video { position:relative; aspect-ratio:16/9; border-radius:12px; overflow:hidden; background:#000; } .video iframe { position:absolute; inset:0; width:100%; height:100%; border:0; }
+.yt { display:inline-block; margin-top:8px; color:var(--muted); font-size:13px; }
+.how { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:10px; } .how b { display:block; color:var(--accent); margin-bottom:4px; } .how span { color:var(--muted); font-size:14px; }
+#nudge { position:static; top:8px; z-index:20; display:flex; align-items:center; gap:8px; margin:0 0 8px; padding:6px 10px; border-radius:10px;
+  background:#fff1c9; color:var(--text); border:1px solid #f5a524; font-size:13px; animation:nudgein .4s ease; }
+#nudge[hidden] { display:none; } #nudge .bell { font-size:18px; }
+#nudge .go { flex:1; display:flex; flex-direction:column; align-items:flex-start; background:none; border:0; padding:0; color:inherit; font:inherit; text-align:left; cursor:pointer; }
+#nudge .go b { font-size:13px; } #nudge .go small { font-size:12px; opacity:.85; } #nudge .arr { font-weight:700; font-size:13px; white-space:nowrap; }
+#nudge .x { background:rgba(0,0,0,.15); border:0; color:inherit; width:26px; height:26px; border-radius:50%; font-size:16px; line-height:1; cursor:pointer; }
+@keyframes nudgein { from { opacity:0; transform:translateY(-8px); } to { opacity:1; transform:none; } }
+@keyframes ring { 0%,60%,100% { transform:rotate(0); } 10%,30% { transform:rotate(14deg); } 20%,40% { transform:rotate(-14deg); } }
+.card.flash, .x-tile.flash { animation:flash 1.6s ease; } @keyframes flash { 0%,60% { box-shadow:0 0 0 3px #f5a524; } 100% { box-shadow:none; } }
+.logo { display:flex; border-radius:50%; cursor:pointer; transition:transform .3s; } .logo:hover { transform:rotate(-20deg) scale(1.06); } .logo:active { transform:rotate(-200deg) scale(.95); }
+header.brand { padding:18px; border-radius:16px; background:linear-gradient(135deg, rgba(11,122,90,.18), rgba(34,158,217,.12)); }
+/* 29.10.2026: плочки за мачовете и лента с успеваемостта (по идея на собственика – чист вид като при големите сайтове) */
+.t-top { display:flex; align-items:baseline; justify-content:space-between; gap:10px; flex-wrap:wrap; margin:22px 0 10px; }
+.dtabs { margin:0 0 10px; } .t-expo { font-size:13px; color:var(--muted); margin:-4px 0 10px; } .stale { background:#fff4e5; color:#7a4b00; border:1px solid #f0c27a; border-radius:12px; padding:10px 14px; margin:10px 0; font-size:14px; }
+.t-h1 { font-size:22px; margin:0; } .t-date { color:var(--muted); font-size:14px; } .t-h { font-size:18px; margin:24px 0 10px; }
+.tiles { display:grid; grid-template-columns:repeat(auto-fill,minmax(340px,1fr)); gap:12px; }
+.tile { display:flex; flex-direction:column; gap:10px; background:var(--card); border:1px solid var(--line); border-radius:14px;
+  padding:14px 16px; color:var(--text); text-decoration:none; transition:border-color .15s, box-shadow .15s; }
+.tile:hover { border-color:var(--accent); box-shadow:0 4px 16px rgba(0,0,0,.06); }
+.t-lg { font-size:13px; font-weight:600; color:var(--muted); }
+.t-body { display:grid; grid-template-columns:62px 1fr auto; align-items:center; gap:10px; }
+.t-time { font-size:16px; font-weight:600; } .t-live { color:var(--red); font-size:13px; font-weight:700; }
+.t-teams { display:flex; flex-direction:column; gap:6px; min-width:0; }
+.tm { display:flex; align-items:center; gap:8px; font-weight:600; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+img.av { background:none !important; object-fit:contain; border-radius:0; }
+.av { flex:none; width:24px; height:24px; border-radius:50%; display:inline-grid; place-items:center; font-style:normal; font-size:10px;
+  font-weight:700; color:#fff; background:hsl(var(--h) 45% 42%); letter-spacing:.3px; }
+.t-sc { display:flex; flex-direction:column; gap:6px; text-align:right; font-size:16px; }
+.t-pick { display:flex; align-items:center; gap:10px; border:1px solid var(--line); border-radius:10px; padding:8px 10px; }
+.t-pick small { color:var(--muted); font-size:11px; flex:none; } .t-pick b { flex:1; font-size:14px; min-width:0; }
+.t-pick .odd { font-weight:700; color:var(--accent); border:1px solid var(--accent); border-radius:8px; padding:3px 9px; }
+.t-foot { display:flex; justify-content:space-between; gap:10px; border-top:1px solid var(--line); padding-top:9px; font-size:13px; color:var(--muted); }
+.t-foot .more { color:var(--accent); font-weight:700; white-space:nowrap; }
+/* 31.10.2026: плочките на прогнозите */
+.x-note { font-size:13px; color:var(--muted); margin:-4px 0 12px; }
+.x-trl { list-style:none; margin:0; padding:0; display:grid; gap:8px; } .x-tr { display:grid; gap:2px; padding:10px 12px; border:1px solid var(--line); border-radius:12px; background:var(--card); overflow-wrap:anywhere; } .x-tr small { color:var(--muted); }
+.x-list { display:flex; flex-direction:column; gap:12px; }
+.x-tile { display:grid; grid-template-columns:74px minmax(0,1fr) minmax(0,1.25fr); align-content:start; background:var(--card); border:1px solid var(--line); border-radius:16px; overflow:hidden; box-shadow:0 2px 10px rgba(15,70,50,.06); }
+.x-when { display:flex; flex-direction:column; align-items:center; justify-content:center; gap:2px; color:#fff; background:linear-gradient(160deg,#0f9d6b,#0b7a5a); }
+.x-when b { font-size:18px; } .x-when small { font-size:12px; opacity:.85; }
+.x-main { padding:13px 14px; display:flex; flex-direction:column; gap:8px; min-width:0; }
+.x-lg { font-size:12px; font-weight:600; color:var(--muted); }
+.x-tm { display:flex; align-items:center; gap:9px; font-weight:700; min-width:0; } .x-tm span { overflow-wrap:anywhere; }
+.x-tm .av { width:30px; height:30px; font-size:11px; }
+.x-picks { padding:11px 13px; display:flex; flex-direction:column; gap:7px; justify-content:center; background:rgba(15,157,107,.05); border-left:1px solid var(--line); min-width:0; }
+.x-pick { display:flex; align-items:center; justify-content:space-between; gap:10px; background:var(--card); border:1px solid var(--line); border-radius:11px; padding:8px 10px; }
+.x-pick b { display:block; font-size:14px; line-height:1.3; }
+.x-val { display:block; font-size:12px; margin-top:2px; } .x-val.yes { color:var(--green); font-weight:700; } .x-val.no { color:var(--muted); }
+.x-odd { flex:none; display:flex; flex-direction:column; align-items:center; min-width:58px; font-size:17px; font-weight:800; line-height:1.15; color:#0b7a5a; background:#e7f7f0; border-radius:9px; padding:4px 8px; }
+.x-odd .tip { width:13px; height:13px; font-size:9px; margin-left:3px; } .x-odd small { font-size:10px; font-weight:600; color:var(--muted); }
+.x-tile { cursor:pointer; transition:box-shadow .15s, border-color .15s; } .x-tile:hover { border-color:var(--accent); box-shadow:0 4px 16px rgba(15,70,50,.12); }
+.x-more { grid-column:1 / -1; text-align:center; font-size:13px; font-weight:700; color:var(--accent); padding:7px; border-top:1px solid var(--line); } .x-more i { font-style:normal; display:inline-block; transition:transform .15s; } .x-tile.open .x-more i { transform:rotate(180deg); }
+.x-an { grid-column:1 / -1; padding:4px 16px 14px; cursor:default; font-size:14px; min-width:0; } .x-an ul { margin:10px 0 6px; padding-left:18px; } .x-an li { margin:6px 0; }
+.x-an-t { width:100%; font-size:13px; border-collapse:collapse; } .x-an-t th, .x-an-t td { padding:5px 7px; text-align:center; border-bottom:1px solid var(--line); white-space:nowrap; } .x-an-t th:first-child { text-align:left; } .x-an-n { margin:0; font-size:12px; color:var(--muted); }
+.brand-t { min-width:0; } .brand-t p { margin:2px 0 0; font-size:15px; font-weight:600; color:#0b7a5a; } .foot-t { margin:10px 0 0; }
+.btns { margin-top:14px; } .x-day { margin-top:18px; } .x-dh { display:flex; align-items:baseline; justify-content:space-between; gap:10px; flex-wrap:wrap; font-size:19px; margin:0 0 10px; padding-bottom:7px; border-bottom:2px solid var(--accent); } .x-dh small { font-size:13px; font-weight:500; color:var(--muted); }
+.x-note { margin-top:18px !important; }
+.topbar { position:sticky; top:0; z-index:50; background:linear-gradient(100deg,#07382c,#0b7a5a 75%,#0f9d6b); box-shadow:0 3px 14px rgba(5,50,38,.28); }
+.tb-in { max-width:860px; margin:0 auto; padding:9px 16px; display:flex; align-items:center; gap:11px; flex-wrap:wrap; } .topbar img { display:block; border-radius:50%; }
+.topbar h1 { font-size:19px; line-height:1.15; margin:0; color:#fff; white-space:nowrap; } .topbar .brand-t p { margin:1px 0 0; font-size:12px; font-weight:500; color:#bff0dc; white-space:nowrap; }
+.tb-nav { margin-left:auto; display:flex; align-items:center; gap:2px; overflow-x:auto; scrollbar-width:none; max-width:100%; } .tb-nav::-webkit-scrollbar { display:none; }
+.tb-nav a { flex:none; display:flex; align-items:center; gap:6px; padding:7px 10px; border-radius:9px; font-size:14px; font-weight:600; color:#d9f5ea; text-decoration:none; transition:background .15s, color .15s; }
+.tb-nav a:hover { background:rgba(255,255,255,.14); color:#fff; } .tb-nav a.on { color:#fff; font-weight:700; }
+.tb-nav i { font-style:normal; font-size:11px; font-weight:800; min-width:19px; text-align:center; padding:1px 5px; border-radius:99px; background:#f5c542; color:#3a2c00; }
+#rezultati { scroll-margin-top:76px; }
+@media (max-width:640px) { .tb-in { padding:8px 12px; gap:6px 9px; } .brand-t p { display:none; } .tb-nav { margin-left:0; width:100%; order:3; flex-wrap:wrap; overflow:visible; } .tb-nav a { padding:5px 8px; font-size:13px; } .x-sec, #rezultati { scroll-margin-top:124px; } }
+.tip { display:inline-grid; place-items:center; width:16px; height:16px; margin-left:5px; border-radius:50%; background:#07382c; color:#fff; font-size:11px; font-weight:800; font-style:normal; line-height:1; cursor:help; vertical-align:1px; flex:none; }
+.tip:hover, .tip:focus { background:var(--accent); outline:none; } .tip-box { position:fixed; z-index:100; max-width:270px; padding:9px 12px; border-radius:10px; background:#07382c; color:#fff; font-size:13px; font-weight:400; line-height:1.4; box-shadow:0 6px 20px rgba(0,0,0,.25); pointer-events:none; }
+.tg-ic { flex:none; vertical-align:-4px; margin-right:7px; }
+.topbar .brand-t { min-width:0; } .topbar a.logo { display:flex; } .tb-name { display:block; font-size:19px; font-weight:700; line-height:1.15; color:#fff; white-space:nowrap; text-decoration:none; }
+
+.x-sec { margin-top:20px; scroll-margin-top:76px; } .x-sh { font-size:22px; margin:0 0 6px; } #x-builders .x-rules { margin:0 0 4px; } summary.x-dh { font-size:17px; font-weight:700; cursor:pointer; list-style:none; } summary.x-dh::-webkit-details-marker { display:none; } summary.x-dh span::before { content:'▾'; display:inline-block; margin-right:8px; color:var(--accent); transition:transform .15s; } details.x-day:not([open]) summary.x-dh span::before { transform:rotate(-90deg); } details.x-day:not([open]) summary.x-dh { margin-bottom:0; }
+/* 31.10.2026: резултатите без хоризонтален скрол */
+.tbl { overflow-x:hidden; } table.res, .tbl table.res { font-size:13px; } table.res th, table.res td { white-space:normal; padding:7px 8px; } table.rs td { overflow-wrap:anywhere; }
+table.rs { table-layout:fixed; } table.rs th:nth-child(1) { width:11%; } table.rs th:nth-child(2) { width:27%; } table.rs th:nth-child(3) { width:10%; } table.rs th { overflow-wrap:normal; font-size:12px; } table.rs th:nth-child(4) { width:21%; } table.rs th:nth-child(5) { width:7%; } table.rs th:nth-child(6) { width:7%; }
+@media (max-width:640px) { table.rs thead { display:none; } table.rs, table.rs tbody { display:block; } table.rs tr { display:grid; grid-template-columns:1fr auto auto; gap:2px 10px; padding:9px 11px; border-bottom:1px solid var(--line); } table.rs td { display:block; padding:0; border:0; }
+  table.rs td:nth-child(2) { grid-column:1 / -1; grid-row:1; font-weight:600; } table.rs td:nth-child(1) { grid-column:1; grid-row:2; color:var(--muted); font-size:12px; } table.rs td:nth-child(3) { grid-column:2 / -1; grid-row:2; text-align:right; font-weight:700; } table.rs td:nth-child(4) { grid-column:1; grid-row:3; } table.rs td:nth-child(5) { grid-column:2; grid-row:3; font-weight:700; } table.rs td:nth-child(6) { grid-column:3; grid-row:3; } table.rs td:nth-child(7) { grid-column:1 / -1; grid-row:4; } }
+.x-chk.old { color:var(--red); font-weight:600; } .x-total { font-size:14px; margin:-4px 0 10px; }
+.x-mark { margin:6px 0 0; width:max-content; } .x-pick.played { border-color:var(--accent); background:#e7f7f0; } .x-pick.played .mark { color:var(--accent); border-color:var(--accent); }
+#x-new { display:flex; align-items:center; justify-content:space-between; gap:10px; margin:0 0 8px; padding:9px 12px; border-radius:10px; background:#e7f7f0; border:1px solid var(--accent); font-size:14px; } #x-new[hidden] { display:none; }
+#x-new button { border:0; border-radius:8px; padding:6px 12px; background:var(--accent); color:#fff; font:inherit; font-weight:700; cursor:pointer; }
+.x-bell { border:0; font:inherit; font-weight:600; cursor:pointer; background:#07382c; color:#fff; } .x-bell[hidden] { display:none; } .x-bell:hover { background:#0b5a46; } .x-bell:disabled { opacity:.75; cursor:default; }
+.x-filter { display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:0 0 10px; } .x-filter select { font:inherit; font-size:14px; padding:8px 10px; border:1px solid var(--line); border-radius:10px; background:var(--card); color:var(--text); max-width:100%; } #x-f-n { font-size:13px; color:var(--muted); }
+.x-tile[hidden], .x-pick[hidden], .x-day[hidden], .x-sec[hidden], .x-f-none[hidden] { display:none; }
+.x-tile { max-width:100%; min-width:0; } .x-list, .x-day, .x-sec { min-width:0; max-width:100%; } .x-an { overflow:hidden; } .x-an .tbl { overflow:hidden; } .x-an-t { table-layout:fixed; } .x-an-t th, .x-an-t td { overflow-wrap:break-word; }
+.x-an-s { margin:8px 0; font-size:13px; overflow-wrap:anywhere; } .x-an-g { margin-top:8px; } .x-an-g th:first-child { white-space:normal; width:34%; overflow-wrap:normal; } .x-an-g th:nth-child(2) { width:13%; }
+@media (max-width:640px) { .x-an-t th, .x-an-t td { padding:4px 3px; font-size:11px; white-space:normal; } }
+.x-kind { font-size:12px; color:var(--muted); } .x-kind b { color:var(--text); }
+.x-stake { display:block; font-size:12px; font-weight:600; margin-top:2px; } .x-pick .mine { display:block; font-size:12px; margin-top:2px; }
+.x-rules { font-size:13px; margin:-4px 0 10px; }
+.m-test { display:inline-block; vertical-align:middle; margin-left:6px; padding:2px 8px; border-radius:99px; background:#f5c542; color:#3a2c00; font-size:12px; font-weight:800; }
+.m-sec { margin-top:20px; scroll-margin-top:124px; }
+.m-list { list-style:none; margin:0; padding:0; display:grid; gap:8px; } .m-tile { display:grid; grid-template-columns:58px 1fr; gap:10px; padding:10px 12px; border:1px solid var(--line); border-radius:14px; background:var(--card); min-width:0; }
+.m-when { display:flex; flex-direction:column; align-items:center; justify-content:center; } .m-when small { color:var(--muted); font-size:11px; } .m-main { display:flex; flex-direction:column; gap:2px; min-width:0; overflow-wrap:anywhere; } .m-main small { color:var(--muted); font-size:12px; }
+.m-live { display:inline-flex; align-items:center; gap:5px; font-size:12px; font-weight:800; color:#d9342b; } .m-live[hidden] { display:none; } .m-live i { width:9px; height:9px; border-radius:50%; background:#e0241b; animation:mpulse 1.4s infinite; } @keyframes mpulse { 50% { opacity:.25; } } .m-sc { font-size:16px; }
+.x-set { margin:0 0 10px; } .x-set summary { cursor:pointer; font-size:14px; font-weight:600; padding:6px 0; } .x-set[open] summary { margin-bottom:8px; }
+@media (max-width:640px) { .btns { display:grid; grid-template-columns:1fr 1fr; gap:6px; } .btns .tg { margin:0; padding:7px 8px; font-size:12.5px; justify-content:center; min-width:0; } .btns .tg svg { width:15px; height:15px; flex:none; } .x-note { font-size:12px; margin:0 0 6px; } }
+.x-bank { display:flex; flex-wrap:wrap; align-items:center; gap:8px; font-size:13px; margin:0 0 12px; } .x-bank label { font-weight:700; }
+.x-bank input { width:110px; font:inherit; padding:6px 9px; border:1px solid var(--line); border-radius:9px; background:var(--card); color:var(--text); } .x-bank span { color:var(--muted); }
+.x-chk { margin:0; font-size:11px; color:var(--muted); }
+@media (max-width:640px) { .x-tile { grid-template-columns:62px minmax(0,1fr); } .x-picks { grid-column:1 / -1; border-left:0; border-top:1px solid var(--line); } }
+.perf { margin-top:18px; background:var(--card); border:1px solid var(--line); border-radius:14px; padding:14px 16px; }
+.pf-head { display:flex; justify-content:space-between; align-items:center; gap:10px; flex-wrap:wrap; }
+.kf { display:flex; gap:6px; flex-wrap:wrap; margin:10px 0; } .kf select { border:1px solid var(--line); background:var(--card); color:var(--text); font:inherit; font-size:13px; padding:7px 10px; border-radius:10px; max-width:100%; }
+.pst.current { color:var(--green); } .pst.stale, .pst.missing, .pst.below, .pst.unchecked { color:var(--red); }
+.rec b.ok { color:var(--green); } .rec b.bad { color:var(--red); }
+a:focus-visible, button:focus-visible, select:focus-visible, summary:focus-visible, input:focus-visible { outline:3px solid #229ED9; outline-offset:2px; }
+.rec { font-size:12px; color:var(--muted); margin-top:4px; }
+.pf-btns { display:flex; gap:4px; } .pf-btns button { border:0; background:transparent; color:var(--muted); font:inherit; font-size:13px;
+  padding:5px 10px; border-radius:8px; cursor:pointer; } .pf-btns button.on { background:var(--bg); color:var(--text); font-weight:700; }
+.pf-line { display:flex; gap:18px; flex-wrap:wrap; margin:10px 0 0; font-size:14px; color:var(--muted); } .pf-line b { color:var(--text); }
+.pf-line b.pos { color:var(--green); } .pf-line b.neg { color:var(--red); }
+.perf .chart { border:0; padding:0; background:transparent; } .pf-note { font-size:12px; color:var(--muted); margin:8px 0 0; }
+@media (max-width:640px) { .tiles { grid-template-columns:1fr; } .tile { padding:12px; } .t-body { grid-template-columns:52px 1fr auto; }
+  .t-h1 { font-size:19px; } .pf-line { gap:10px; font-size:13px; } }
+.live { color:var(--red); font-size:12px; font-weight:600; margin-left:4px; }
+.tg:hover { background:#1b8bc0; } .btns { display:flex; flex-wrap:wrap; gap:10px; } .tg.fb { background:#1877F2; } .tg.don { background:#f5a524; color:#1a1300; } .tg.ads { margin:10px 0 0; background:var(--accent); }
+.share { display:flex; flex-wrap:wrap; gap:8px; align-items:center; margin-top:24px; color:var(--muted); font-size:14px; } .share a { padding:6px 12px; border:1px solid var(--line); border-radius:999px; color:var(--text); text-decoration:none; background:var(--card); }
+.ads { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(340px,100%),1fr)); gap:12px; margin-top:14px; }
+.promo { position:relative; overflow:hidden; display:flex; align-items:center; gap:14px; padding:16px 18px; border-radius:14px; text-decoration:none; color:#fff;
+  background:linear-gradient(120deg, var(--c), color-mix(in srgb, var(--c) 55%, #000)); box-shadow:0 6px 18px color-mix(in srgb, var(--c) 35%, transparent);
+  transition:transform .25s ease, box-shadow .25s ease; }
+.promo:hover { transform:translateY(-3px) scale(1.01); box-shadow:0 10px 26px color-mix(in srgb, var(--c) 50%, transparent); }
+.promo::after { content:""; position:absolute; top:0; left:-60%; width:40%; height:100%; background:linear-gradient(100deg, transparent, rgba(255,255,255,.35), transparent);
+  transform:skewX(-20deg); animation:shine 3.2s ease-in-out infinite; }
+.promo .ico { font-size:34px; line-height:1; animation:bounce 1.8s ease-in-out infinite; }
+.promo .ptxt { display:flex; flex-direction:column; flex:1; } .promo .ptxt b { font-size:18px; } .promo .ptxt small { opacity:.9; font-size:13px; }
+.promo .cta { background:#fff; color:var(--c); font-weight:700; font-size:14px; padding:8px 14px; border-radius:999px; white-space:nowrap; animation:pulse 2s ease-in-out infinite; }
+.promo .until { position:absolute; bottom:5px; right:9px; font-style:normal; font-size:10px; opacity:.75; }
+.promo .tag { position:absolute; top:5px; right:9px; font-style:normal; font-size:10px; opacity:.6; letter-spacing:.3px; }
+@keyframes shine { 0%, 55% { left:-60%; } 100% { left:130%; } }
+@keyframes bounce { 0%, 100% { transform:translateY(0) rotate(0); } 50% { transform:translateY(-6px) rotate(-12deg); } }
+@keyframes pulse { 0%, 100% { transform:scale(1); } 50% { transform:scale(1.07); } }
+.mon { display:none; } .mon-center { display:block; margin-top:14px; }
+.pcard a { display:flex; gap:14px; align-items:center; text-decoration:none; color:var(--text); }
+li.pcard { list-style:none; background:var(--card); border:1px dashed var(--line); border-radius:12px; padding:12px; margin:10px 0; }
+.pcard .ppic { width:96px; height:96px; flex:none; background:#fff; border-radius:10px; display:flex; align-items:center; justify-content:center; overflow:hidden; }
+.pcard .ppic img { max-width:100%; max-height:100%; object-fit:contain; transition:transform .3s; } .pcard a:hover img { transform:scale(1.08); }
+.pcard .pinfo { position:relative; display:flex; flex-direction:column; gap:4px; flex:1; min-width:0; }
+.pcard .tag { position:absolute; top:-4px; right:0; font-style:normal; font-size:10px; color:var(--muted); }
+.pcard .nm { font-size:14px; font-weight:600; padding-right:44px; } .pcard .pr { font-size:18px; font-weight:800; color:#2ea8ff; }
+.pcard .go { font-size:13px; color:var(--accent); font-weight:600; }
+.shop { display:grid; grid-template-columns:repeat(auto-fill,minmax(min(250px,100%),1fr)); gap:10px; }
+.shop .pcard { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:12px; }
+.mon .bezel { background:linear-gradient(160deg,#2a313c,#11151b); border-radius:16px; padding:10px; box-shadow:0 10px 28px rgba(0,0,0,.45), inset 0 0 0 1px rgba(255,255,255,.06); }
+.mon .screen { position:relative; height:330px; border-radius:9px; overflow:hidden; background:#fff; }
+.mon-center .screen { height:190px; }
+.mon .slide { position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:6px; padding:12px;
+  text-decoration:none; color:#16181d; opacity:0; transform:translateX(30px) scale(.98); transition:opacity .6s ease, transform .6s ease; pointer-events:none; }
+.mon .slide.on { opacity:1; transform:none; pointer-events:auto; }
+.mon .pic { width:100%; flex:1; display:flex; align-items:center; justify-content:center; min-height:0; }
+.mon .pic img { max-width:100%; max-height:100%; object-fit:contain; transition:transform .4s ease; }
+.mon .slide:hover .pic img { transform:scale(1.06); }
+.mon .nm { font-size:13px; font-weight:600; text-align:center; line-height:1.3; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; }
+.mon .pr { font-size:20px; font-weight:800; color:#0082C3; }
+.mon .go { font-size:12px; font-weight:700; color:#fff; background:#0082C3; padding:6px 12px; border-radius:999px; }
+.mon-center .slide { flex-direction:row; text-align:left; gap:12px; } .mon-center .pic { height:100%; } .mon-center .nm { text-align:left; }
+.mon .info { display:flex; flex-direction:column; align-items:center; gap:6px; }
+.mon-center .info { flex:1; align-items:flex-start; min-width:0; } .mon-center .pic { flex:0 0 42%; }
+.mon .dots { display:flex; justify-content:center; gap:6px; padding-top:8px; }
+.mon .dots i { width:7px; height:7px; border-radius:50%; background:rgba(255,255,255,.25); cursor:pointer; transition:background .3s, width .3s; }
+.mon .dots i.on { width:18px; border-radius:4px; background:#0082C3; }
+.mon .stand { width:46px; height:14px; margin:0 auto; background:linear-gradient(#1b2028,#0d1015); clip-path:polygon(20% 0,80% 0,100% 100%,0 100%); }
+.mon .mtag { text-align:center; font-size:10px; color:var(--muted); opacity:.55; margin-top:4px; }
+@media (min-width: 1320px) {
+  .mon.side-l, .mon.side-r { position:fixed; top:50%; transform:translateY(-50%); width:200px; z-index:5; display:block; }
+  .side-l { left:calc((100vw - 860px) / 4 - 100px); } .side-r { right:calc((100vw - 860px) / 4 - 100px); }
+  .mon-center { display:none !important; }
+  .rside.side-l, .rside.side-r { position:fixed; top:50%; transform:translateY(-50%); width:200px; z-index:5; display:flex; }
+  .refsec { display:none; }
+}
+.rside { display:none; flex-direction:column; align-items:center; text-align:center; gap:8px; padding:18px 14px; border-radius:16px;
+  background:var(--card); border:1px solid var(--line); color:inherit; text-decoration:none; box-shadow:0 10px 30px rgba(0,0,0,.25); }
+.rside:hover { border-color:var(--accent); } .rside img { border-radius:16px; } .rside b { font-size:17px; }
+.rside small { color:var(--muted); font-size:13px; line-height:1.4; } .rside .go { margin-top:4px; padding:8px 14px; border-radius:999px; background:var(--accent); color:#fff; font-weight:700; font-size:13px; }
+.rside i { font-style:normal; font-size:10px; color:var(--muted); opacity:.7; }
+@keyframes hop { 0%, 100% { transform:translateY(0); } 50% { transform:translateY(120px); } }
+@keyframes shade { 0%, 100% { transform:scale(.55); opacity:.45; } 50% { transform:scale(1.1); opacity:.95; } }
+@keyframes spin { to { transform:rotate(360deg); } }
+@keyframes glow { 0%, 100% { opacity:.55; transform:translate(-50%, -50%) scale(.9); } 50% { opacity:1; transform:translate(-50%, -50%) scale(1.08); } }
+@keyframes shinev { 0%, 50% { top:-60%; } 100% { top:130%; } }
+@media (prefers-reduced-motion: reduce) { .promo::after, .promo .ico, .promo .cta, .mon .slide { transition:none; } }
+.adslot { display:flex; flex-direction:column; align-items:center; gap:4px; margin:14px 0 0; padding:16px; border-radius:12px; background:var(--card); border:1px solid var(--line); color:var(--text); text-decoration:none; text-align:center; }
+.adslot span { color:var(--muted); font-size:12px; } .adslot img { max-width:100%; border-radius:8px; }
+.guide { margin:0 0 18px; background:var(--card); border:1px solid var(--line); border-radius:14px; overflow:hidden; }
+.guide-head { display:flex; align-items:center; gap:12px; padding:14px 16px; background:linear-gradient(135deg, rgba(11,122,90,.14), rgba(34,158,217,.08)); border-bottom:1px solid var(--line); }
+.guide-head .gi { font-size:26px; } .guide-head b { display:block; font-size:17px; } .guide-head small { color:var(--muted); font-size:13px; }
+.why { margin-top:10px; border-top:1px solid var(--line); }
+.mpage { display:inline-block; margin-top:8px; font-size:13px; color:var(--muted); text-decoration:none; }
+.mpage:hover { color:var(--accent); text-decoration:underline; }
+.why summary { cursor:pointer; list-style:none; padding:10px 0 4px; font-weight:600; font-size:14px; color:var(--text); }
+.why summary::-webkit-details-marker { display:none; }
+.why summary::after { content:" ▾"; color:var(--muted); }
+.why[open] summary::after { content:" ▴"; }
+.why .wbox { margin-top:6px; background:var(--bg); border-radius:12px; padding:4px 14px; } .fx { margin:10px 0; } .fx ul { display:block; margin:6px 0 4px; } .fx li { font-size:13px; line-height:1.45; padding:5px 8px; margin:4px 0; border-radius:8px; border-left:3px solid var(--line); background:var(--card); list-style:none; } .fx li.fx-ok { border-left-color:var(--green); } .fx li.fx-bad { border-left-color:var(--red); } .fx small { color:var(--muted); font-size:11px; }
+.why p { margin:10px 0; font-size:14px; line-height:1.6; color:var(--text); }
+.why p:last-child { font-weight:600; }
+.guide details { border-bottom:1px solid var(--line); }
+.guide summary { list-style:none; cursor:pointer; display:flex; align-items:center; gap:10px; padding:12px 16px; font-weight:600; }
+.guide summary::-webkit-details-marker { display:none; }
+.guide summary::after { content:"›"; margin-left:auto; color:var(--muted); font-size:20px; transition:transform .2s ease; }
+.guide details[open] summary::after { transform:rotate(90deg); } details.guide[open] > summary.guide-head::after { transform:rotate(90deg); } details.guide:not([open]) > summary.guide-head { border-bottom:0; }
+.guide summary:hover { background:color-mix(in srgb, var(--accent) 6%, transparent); }
+.guide .n { flex:0 0 24px; height:24px; border-radius:50%; background:var(--accent); color:#fff; font-size:13px; display:flex; align-items:center; justify-content:center; }
+.guide details p { margin:0; padding:0 16px 14px 50px; color:var(--muted); font-size:14px; } .guide details p b { color:var(--text); }
+.guide-foot { margin:0; padding:10px 16px; color:var(--muted); font-size:12px; }
+.mark { margin-left:auto; display:inline-flex; align-items:center; gap:5px; cursor:pointer; font-size:12px; font-weight:600; color:var(--muted);
+  border:1px solid var(--line); border-radius:999px; padding:2px 9px 2px 6px; white-space:nowrap; user-select:none; }
+.top .lg { flex:1; text-align:right; } .top { align-items:center; }
+.mark input { width:16px; height:16px; margin:0; accent-color:var(--accent); cursor:pointer; }
+td.mkc .mark { border:0; padding:0; } td.mkc .mark span { display:none; }
+.card.played { border-color:var(--accent); background:color-mix(in srgb, var(--accent) 7%, var(--card)); }
+.card.played .mark, tr.played .mark { color:var(--accent); border-color:var(--accent); }
+tr.played td { background:color-mix(in srgb, var(--accent) 7%, transparent); }
+.mk-hint { color:var(--muted); font-size:13px; margin:-4px 0 10px; } #mk-count { color:var(--accent); font-weight:600; margin-left:4px; }
+.calc label { display:block; font-weight:600; margin-bottom:8px; }
+.calc-in { display:flex; align-items:center; gap:8px; max-width:260px; }
+.calc-in input { flex:1; min-width:0; font:inherit; font-size:18px; padding:9px 12px; border:1px solid var(--line); border-radius:10px; background:var(--bg); color:var(--text); }
+.calc-in input:focus { outline:2px solid var(--accent); outline-offset:1px; }
+.tiers { display:grid; grid-template-columns:repeat(auto-fit,minmax(130px,1fr)); gap:8px; margin:12px 0 8px; }
+.tiers div { border:1px solid var(--line); border-radius:10px; padding:8px 10px; display:flex; flex-direction:column; }
+.tiers span { color:var(--muted); font-size:12px; } .tiers b { font-size:13px; } .tiers i { font-style:normal; font-size:20px; font-weight:700; color:var(--accent); }
+.calc small { color:var(--muted); font-size:12px; } .mine { color:var(--text); } .mine b { color:var(--accent); }
+.empty-ad { border:2px dashed var(--line); } .empty-ad:hover { border-color:var(--accent); }
+:root{--bg:#f3f7f5;--card:#fff;--tx:#14231c;--mut:#5d6f66;--ln:#dfe8e3;--win:#14823f;--loss:#c62f2f;--block:#0f7a55}
+@media (prefers-color-scheme:dark){:root{--bg:#0f1714;--card:#18231e;--tx:#edf4f0;--mut:#9fb1a8;--ln:#2a3932;--win:#55cf85;--loss:#ff7b7b}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.4 system-ui,-apple-system,"Segoe UI",sans-serif}a{color:inherit}
+body>header{background:#0b3d2b;color:#fff;padding:12px 16px 0;display:block}.sitelogo{font-size:21px;font-weight:800;text-decoration:none}.sitelogo small{display:inline;color:#cfe9dd;font-size:13px;margin-left:8px}
+.topnav{display:flex;gap:4px;overflow-x:auto;margin-top:8px}.topnav a{padding:8px 13px;text-decoration:none;white-space:nowrap;border-radius:8px 8px 0 0;font-size:15px}.topnav a.on{background:var(--bg);color:var(--tx);font-weight:700}
+.rside,.mon.side-l,.mon.side-r{display:none!important}main{max-width:none;margin:0;padding:0;min-width:0}.wrap{display:grid;grid-template-columns:230px minmax(0,1fr);gap:16px;max-width:1400px;margin:auto;padding:16px}
+.side{background:var(--card);border:1px solid var(--ln);border-radius:12px;padding:12px;align-self:start}.side h3{font-size:13px;letter-spacing:.04em;margin:14px 0 6px;color:var(--mut)}.side h3:first-child{margin-top:0}.side a{display:flex;justify-content:space-between;gap:8px;padding:6px 8px;border-radius:7px;text-decoration:none;font-size:15px}.side a:hover,.side a.on{background:var(--ln);font-weight:700}.side i{font-style:normal;background:var(--block);color:#fff;border-radius:9px;padding:0 7px;font-size:12px;align-self:center}
+.tabs{display:flex;gap:6px;margin-bottom:12px;flex-wrap:wrap}.tabs a{padding:6px 14px;border-radius:16px;background:var(--card);border:1px solid var(--ln);text-decoration:none;font-size:14px}.tabs a.on{background:var(--block);border-color:var(--block);color:#fff;font-weight:700}
+h1{font-size:19px;margin:0 0 10px}h2{font-size:17px;margin:18px 0 8px}ul.t{list-style:none;margin:0;padding:0;background:var(--card);border:1px solid var(--ln);border-radius:10px;overflow:hidden}
+.r{display:grid;grid-template-columns:minmax(190px,1.3fr) 138px 66px minmax(130px,1fr) 62px 62px 62px 92px;gap:10px;align-items:center;padding:8px 12px;border-top:1px solid var(--ln)}.r[data-href]{cursor:pointer}.r[data-href]:hover{background:var(--ln)}.hd{border-top:0;color:var(--mut);font-size:13px;font-weight:600}
+.mt{background:var(--block);color:#fff;border-radius:8px;padding:7px 10px;display:block;text-decoration:none}.mt small{color:#d5eee3;margin-top:3px}.tm{display:flex;align-items:center;gap:7px;min-width:0;line-height:1.45;white-space:normal;overflow:visible}.tm b{font-size:15px;overflow-wrap:anywhere}.tm img,.no{width:22px;height:22px;flex:none;object-fit:contain}.no{display:grid;place-items:center;border-radius:50%;background:#ffffff33;font-size:12px;font-weight:700}
+small{display:block;color:var(--mut);font-size:12px;font-weight:400}.x{display:grid;grid-template-columns:repeat(3,1fr);text-align:center;font-variant-numeric:tabular-nums;font-size:15px}.x .best{font-weight:800}.n{text-align:center;font-variant-numeric:tabular-nums}.pk b{display:inline-block;background:var(--win);color:var(--card);border-radius:14px;padding:3px 11px;font-size:14px}.pk small{margin-top:3px}
+.tag{display:inline-block;min-width:44px;padding:2px 7px;border:1px solid var(--ln);border-radius:6px;font-weight:700}.sc .tag{font-size:16px;font-weight:800}.win .sc .tag{background:var(--win);border-color:var(--win);color:var(--card)}.loss .sc .tag{background:var(--loss);border-color:var(--loss);color:var(--card)}.m{white-space:nowrap;font-weight:600;margin-top:3px}.win .m{color:var(--win)}.loss .m{color:var(--loss)}.none{color:var(--mut)}
+.box{background:var(--card);border:1px solid var(--ln);border-radius:12px;padding:14px;margin-bottom:14px}.box h2{margin-top:0}.hero{display:grid;grid-template-columns:1fr auto 1fr;gap:12px;align-items:center;text-align:center}.hero img,.hero .no{width:56px;height:56px;margin:auto;object-fit:contain;display:block}.hero .no{display:grid;background:var(--ln)}.hero b{display:block;margin-top:6px}.hero .big{font-size:30px;font-weight:800}
+.nums{display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:10px;text-align:center}.nums b{display:block;font-size:20px}.whyl{margin:0;padding-left:20px}.whyl li{margin:6px 0}.two{display:grid;grid-template-columns:1fr 1fr;gap:14px}table{width:100%;border-collapse:collapse;font-size:14px}td{padding:5px 4px;border-top:1px solid var(--ln)}td.w{color:var(--win);font-weight:700}td.l{color:var(--loss);font-weight:700}
+@media (max-width:1180px){.r{grid-template-columns:repeat(4,1fr);padding:12px}.hd{display:none}.mt,.x,.pk{grid-column:1/-1}.n[data-l]::before,.x [data-l]::before{content:attr(data-l);display:block;color:var(--mut);font-size:12px;font-weight:400}}
+@media (max-width:800px){.wrap{grid-template-columns:minmax(0,1fr);padding:12px}.side{display:flex;gap:6px;overflow-x:auto;padding:8px}.side h3{display:none}.side a{white-space:nowrap;background:var(--bg)}.side a:not([href*="?l="]){display:none}.two{grid-template-columns:minmax(0,1fr)}}</style></head>
+<body><header><a class="sitelogo" href="index.html">+EV Сигнали<small>Прогнозите на нашия модел</small></a><nav class="topnav"><a href='index.html'>Прогнози за днес</a><a href='na-zhivo.html'>На живо</a><a href='utre.html'>Прогнози за утре</a><a href='vchera.html'>Прогнози от вчера</a><a href='top.html'>Топ прогнози</a><a href='klasirane.html'>Класиране</a><a href='kalkulator.html'>EV калкулатор</a><a href='kakvo-e-ev.html'>Какво е +EV</a><a href='metodologiya.html'>Методология</a><a href='za-nas.html'>За нас</a></nav></header><div class="wrap"><nav class="side"><h3>ФУТБОЛ</h3><a href='index.html'><span>Прогнози за днес</span></a><a href='na-zhivo.html'><span>На живо</span></a><a href='utre.html'><span>Прогнози за утре</span></a><a href='vchera.html'><span>Прогнози от вчера</span><i>71</i></a><a href='top.html'><span>Топ прогнози</span></a><h3>ПЪРВЕНСТВА</h3><a href='index.html?l=Campeonato%20de%20Portugal'><span>Campeonato de Portugal</span><i>12</i></a><a href='index.html?l=Nigeria%20Premier%20Football%20League'><span>Nigeria Premier Football League</span><i>4</i></a><a href='index.html?l=2.%20Bundesliga'><span>2. Bundesliga</span><i>3</i></a><a href='index.html?l=Eredivisie'><span>Eredivisie</span><i>3</i></a><a href='index.html?l=Serie%20A'><span>Serie A</span><i>3</i></a><a href='index.html?l=Serie%20B'><span>Serie B</span><i>3</i></a><a href='index.html?l=Serie%20C%2C%20Girone%20A'><span>Serie C, Girone A</span><i>3</i></a><a href='index.html?l=Trendyol%201.%20Lig'><span>Trendyol 1. Lig</span><i>3</i></a><a href='index.html?l=Trendyol%20Super%20Lig'><span>Trendyol Super Lig</span><i>3</i></a><a href='index.html?l=Allsvenskan'><span>Allsvenskan</span><i>2</i></a><a href='index.html?l=Austrian%20Bundesliga'><span>Austrian Bundesliga</span><i>2</i></a><a href='index.html?l=Czech%20First%20League'><span>Czech First League</span><i>2</i></a><a href='index.html?l=Danish%20Superliga'><span>Danish Superliga</span><i>2</i></a><a href='index.html?l=Girabola'><span>Girabola</span><i>2</i></a><a href='index.html?l=K%20League%201'><span>K League 1</span><i>2</i></a><a href='index.html?l=Liga%20Portugal%202'><span>Liga Portugal 2</span><i>2</i></a><a href='index.html?l=Serie%20C%2C%20Girone%20B'><span>Serie C, Girone B</span><i>2</i></a><a href='index.html?l=Tunisian%20Ligue%20Professionnelle%201'><span>Tunisian Ligue Professionnelle 1</span><i>2</i></a><a href='index.html?l=Bundesliga'><span>Bundesliga</span><i>1</i></a><a href='index.html?l=Eerste%20Divisie'><span>Eerste Divisie</span><i>1</i></a><a href='index.html?l=Eliteserien'><span>Eliteserien</span><i>1</i></a><a href='index.html?l=La%20Liga'><span>La Liga</span><i>1</i></a><a href='index.html?l=League%20One'><span>League One</span><i>1</i></a><a href='index.html?l=Liga%20F'><span>Liga F</span><i>1</i></a><a href='index.html?l=Ligue%201'><span>Ligue 1</span><i>1</i></a><a href='index.html?l=Pro%20League'><span>Pro League</span><i>1</i></a><a href='index.html?l=Scottish%20Premiership'><span>Scottish Premiership</span><i>1</i></a><a href='index.html?l=Segunda%20Divisi%C3%B3n'><span>Segunda División</span><i>1</i></a><a href='index.html?l=Serie%20C%2C%20Girone%20C'><span>Serie C, Girone C</span><i>1</i></a><a href='index.html?l=Super%20League'><span>Super League</span><i>1</i></a><a href='index.html?l=Superettan'><span>Superettan</span><i>1</i></a><a href='index.html?l=Superliga'><span>Superliga</span><i>1</i></a><a href='index.html?l=Veikkausliiga'><span>Veikkausliiga</span><i>1</i></a><a href='index.html?l=%D0%A8%D0%B2%D0%B5%D1%86%D0%B8%D1%8F'><span>Швеция</span><i>1</i></a><h3>ОЩЕ</h3><a href='klasirane.html'><span>Класиране</span></a><a href='kalkulator.html'><span>EV калкулатор</span></a><a href='kakvo-e-ev.html'><span>Какво е +EV</span></a><a href='metodologiya.html'><span>Методология</span></a><a href='za-nas.html'><span>За нас</span></a></nav><main><div id="x-new" hidden><b></b><button type="button">Обнови</button></div>
+<p id="x-ios-state" class="mk-hint" hidden></p>
+<p id="x-ios" class="mk-hint" hidden>За известия на iPhone: натисни „Сподели“, после „Добави към началния екран“ и отвори сайта оттам.</p>
+<div id="nudge" hidden><span class="bell">🔔</span><button class="go" type="button"><b></b><small></small></button><span class="arr">Виж ↓</span><button class="x" type="button" aria-label="Скрий">×</button></div>
+
+<div class="btns"><a class="tg" href="https://t.me/+KPmZ8_DDm4ozY2Zk" target="_blank" rel="noopener"><svg class='tg-ic' viewBox='0 0 24 24' width='18' height='18' aria-hidden='true'><path fill='currentColor' d='M21.9 4.3 18.7 19.4c-.2 1-.9 1.3-1.8.8l-4.9-3.6-2.4 2.3c-.3.3-.5.5-1 .5l.3-5 9.1-8.2c.4-.4-.1-.6-.6-.2L6.7 13.1l-4.8-1.5c-1-.3-1-1 .2-1.5l18.5-7.1c.9-.3 1.6.2 1.3 1.3z'/></svg>Влез в Telegram канала</a><a class="tg fb" href="https://www.facebook.com/plusevsignali" target="_blank" rel="noopener"><svg class='tg-ic' viewBox='0 0 24 24' width='18' height='18' aria-hidden='true'><path fill='currentColor' d='M24 12a12 12 0 1 0-13.9 11.9v-8.4H7.1V12h3V9.4c0-3 1.8-4.7 4.5-4.7 1.3 0 2.7.2 2.7.2v3h-1.5c-1.5 0-2 .9-2 1.9V12h3.3l-.5 3.5h-2.8v8.4A12 12 0 0 0 24 12z'/></svg>Facebook страница</a><a class="tg don" href="https://t.me/ivko_value_signals_bot?start=donate" target="_blank" rel="noopener"><svg class='tg-ic' viewBox='0 0 24 24' width='18' height='18' aria-hidden='true'><path fill='currentColor' d='M4 8h13v6a6 6 0 0 1-6 6H10a6 6 0 0 1-6-6V8zm13 1.5V12h1a2 2 0 0 0 2-1.3 1.8 1.8 0 0 0-2-1.2h-1zM17 8h1.2A3.6 3.6 0 0 1 22 10.8 3.9 3.9 0 0 1 18 14h-1.3M8 2.5c1 1 1 2 0 3M12 2.5c1 1 1 2 0 3'/></svg>Подкрепи ни</a><button type="button" class="tg x-bell" id="x-bell" hidden><svg class='tg-ic' viewBox='0 0 24 24' width='18' height='18' aria-hidden='true'><path fill='currentColor' d='M12 22a2.5 2.5 0 0 0 2.4-2h-4.8A2.5 2.5 0 0 0 12 22zm7-6v-5a7 7 0 0 0-5.5-6.8V3.5a1.5 1.5 0 0 0-3 0v.7A7 7 0 0 0 5 11v5l-2 2v1h18v-1z'/></svg><span>Включи известията</span></button></div><div class='tabs'><a href='index.html'>← Към прогнозите</a></div><div class='box'><small>Campeonato de Portugal · 01.11.2026 17:00</small><div class='hero'><div><img src='logos/4820.png' alt=''><b>Amora FC</b></div><div class='big'>1:2<small>❌ Губи</small></div><div><img src='logos/8394.png' alt=''><b>GD Alcochetense</b></div></div></div><div class='box'><h2>Прогноза: Домакин или равен</h2><p>От нашия модел · шанс около 70%</p><h2>Защо</h2><ul class='whyl'><li>Шансът от цените на пазара е 70%, а оценката на модела от последните мачове е 71%. Прогнозата влиза, когато и двете минат праговете на модела и пазарният шанс е поне 70%.</li><li>Очаквани голове в този мач: 1.77 за Amora FC и 1.35 за GD Alcochetense, сметнати от очаквани голове (xG) в последните мачове, като домакинът се гледа у дома, а гостът навън.</li><li>Amora FC: средно 1.4 отбелязани и 1.4 допуснати гола в последните 7 мача; над 2.5 гола в 3 от тях.</li><li>GD Alcochetense: средно 2.3 отбелязани и 1.2 допуснати гола в последните 9 мача; над 2.5 гола в 5 от тях.</li><li>Преки срещи: 1 мача, 0 победи за Amora FC, 0 равни, 1 победи за GD Alcochetense, средно 3.00 гола.</li></ul><p><small>Висок шанс значи, че изходът минава по-често, не че залогът е печеливш. Моделът още няма доказано предимство пред пазара.</small></p></div><div class='box'><h2>Оценка на нашия модел</h2><div class='nums'><div><b>48%</b><small>Победа Amora FC</small></div><div><b>23%</b><small>Равен</small></div><div><b>29%</b><small>Победа GD Alcochetense</small></div><div><b>1:1</b><small>Точен резултат, шанс 11%</small></div><div><b>2:1</b><small>Точен резултат, шанс 9%</small></div><div><b>1:0</b><small>Точен резултат, шанс 8%</small></div></div></div><div class='box two'><div><h2>Amora FC: последни мачове</h2><table><tr><td>25.10</td><td>навън</td><td>SU Sintrense</td><td>1:2</td><td class='l'>З</td></tr><tr><td>11.10</td><td>у дома</td><td>GD Lagoa</td><td>1:1</td><td class=''>Р</td></tr><tr><td>27.09</td><td>у дома</td><td>JD Lajense</td><td>1:0</td><td class='w'>П</td></tr><tr><td>20.09</td><td>у дома</td><td>União Desportiva da Serra</td><td>3:4</td><td class='l'>З</td></tr><tr><td>13.09</td><td>навън</td><td>1º Dezembro</td><td>1:1</td><td class=''>Р</td></tr><tr><td>06.09</td><td>у дома</td><td>Real SC</td><td>0:1</td><td class='l'>З</td></tr><tr><td>23.08</td><td>навън</td><td>Vitória de Setúbal</td><td>3:1</td><td class='w'>П</td></tr></table></div><div><h2>GD Alcochetense: последни мачове</h2><table><tr><td>25.10</td><td>у дома</td><td>FC Serpa</td><td>3:1</td><td class='w'>П</td></tr><tr><td>18.10</td><td>у дома</td><td>CS Marítimo</td><td>1:2</td><td class='l'>З</td></tr><tr><td>11.10</td><td>навън</td><td>Santa Clara Azores B</td><td>0:2</td><td class='l'>З</td></tr><tr><td>27.09</td><td>навън</td><td>SC Mineiro Aljustrelense</td><td>2:0</td><td class='w'>П</td></tr><tr><td>20.09</td><td>у дома</td><td>Бенфика</td><td>2:0</td><td class='w'>П</td></tr><tr><td>13.09</td><td>у дома</td><td>Imortal Deportivo Clube</td><td>1:1</td><td class=''>Р</td></tr><tr><td>06.09</td><td>у дома</td><td>Fayal SC</td><td>8:0</td><td class='w'>П</td></tr><tr><td>23.08</td><td>у дома</td><td>GD Portel</td><td>2:2</td><td class=''>Р</td></tr><tr><td>16.08</td><td>навън</td><td>Juventude SC</td><td>2:3</td><td class='l'>З</td></tr></table></div></div><h2>Партньори</h2>
+<p class="mk-hint">Отделно от прогнозите – реферални и партньорски линкове, от които сайтът получава малко приход.</p>
+<a class='rside side-l' href='https://join.honeygain.com/IVKO1AC681' target='_blank' rel='sponsored noopener'><img src='honeygain.png' alt='Honeygain' width='72' height='72'><b>Honeygain</b><small>Плаща ти за неизползвания интернет – телефон или компютър, работи само във фона.</small><span class='go'>Регистрирай се →</span><i>💸 допълнителен доход · реферален линк</i></a><a class='rside side-r' href='https://pawns.app/?r=19542009' target='_blank' rel='sponsored noopener'><img src='pawns.png' alt='Pawns.app' width='72' height='72'><b>Pawns.app</b><small>Споделяш интернет и попълваш кратки анкети – изплащане през PayPal или крипто.</small><span class='go'>Регистрирай се →</span><i>💸 допълнителен доход · реферален линк</i></a><div class="mon mon-center"><div class="bezel"><div class="screen"><a class="slide on" href="https://profitshare.bg/l/3991999" target="_blank" rel="sponsored noopener"><span class="pic"><img src="https://contents.mediadecathlon.com/p1824901/1cr1/k$ac480a9d270915d2ff008a9dcdbdf1a6/prod.jpg?format=auto&amp;f=400x400" alt="ADIDAS обувки за футбол Mundial Team Turf, черни"></span><span class="info"><span class="nm">ADIDAS обувки за футбол Mundial Team Turf, черни</span><span class="pr">138,05 €</span><span class="go">Виж в Decathlon →</span></span></a><a class="slide" href="https://profitshare.bg/l/3992003" target="_blank" rel="sponsored noopener"><span class="pic"><img src="https://contents.mediadecathlon.com/p2379942/1cr1/k$685f25617d32f6f13be30d34fd6127ac/prod.jpg?format=auto&amp;f=400x400" alt="KIPSTA футболна топка Light Learning Ball, размер 5"></span><span class="info"><span class="nm">KIPSTA футболна топка Light Learning Ball, размер 5</span><span class="pr">6,99 €</span><span class="go">Виж в Decathlon →</span></span></a><a class="slide" href="https://profitshare.bg/l/3992000" target="_blank" rel="sponsored noopener"><span class="pic"><img src="https://contents.mediadecathlon.com/p2380533/1cr1/k$80390abb35d0f354245957c1a981cfd3/prod.jpg?format=auto&amp;f=400x400" alt="KIPSTA детски обувки за футбол 100 Easy AG/FG"></span><span class="info"><span class="nm">KIPSTA детски обувки за футбол 100 Easy AG/FG</span><span class="pr">11,99 €</span><span class="go">Виж в Decathlon →</span></span></a><a class="slide" href="https://profitshare.bg/l/3992004" target="_blank" rel="sponsored noopener"><span class="pic"><img src="https://contents.mediadecathlon.com/p2769828/1cr1/k$01edc9bc97140e199ae0973af0b468e4/prod.jpg?format=auto&amp;f=400x400" alt="KIPSTA футболна топка Softball XLight, размер 5"></span><span class="info"><span class="nm">KIPSTA футболна топка Softball XLight, размер 5</span><span class="pr">5,49 €</span><span class="go">Виж в Decathlon →</span></span></a><a class="slide" href="https://profitshare.bg/l/3992001" target="_blank" rel="sponsored noopener"><span class="pic"><img src="https://contents.mediadecathlon.com/p3056639/1cr1/k$26ecbb3ff66318db610206ce6f083818/prod.jpg?format=auto&amp;f=400x400" alt="KIPSTA детски обувки за футзал Sala Club Easy"></span><span class="info"><span class="nm">KIPSTA детски обувки за футзал Sala Club Easy</span><span class="pr">18,40 €</span><span class="go">Виж в Decathlon →</span></span></a><a class="slide" href="https://profitshare.bg/l/3992005" target="_blank" rel="sponsored noopener"><span class="pic"><img src="https://contents.mediadecathlon.com/p2379984/1cr1/k$ffa1f3f8a4f09a8584d33af8730be5f9/prod.jpg?format=auto&amp;f=400x400" alt="KIPSTA футболна топка Sunny 300, размер 4"></span><span class="info"><span class="nm">KIPSTA футболна топка Sunny 300, размер 4</span><span class="pr">3,49 €</span><span class="go">Виж в Decathlon →</span></span></a><a class="slide" href="https://profitshare.bg/l/3992002" target="_blank" rel="sponsored noopener"><span class="pic"><img src="https://contents.mediadecathlon.com/p3236977/1cr1/k$d167daa5d5bfe3007d95c505bc5885a3/prod.jpg?format=auto&amp;f=400x400" alt="KIPSTA детски обувки за футзал 100, сини"></span><span class="info"><span class="nm">KIPSTA детски обувки за футзал 100, сини</span><span class="pr">11,96 €</span><span class="go">Виж в Decathlon →</span></span></a><a class="slide" href="https://profitshare.bg/l/3992006" target="_blank" rel="sponsored noopener"><span class="pic"><img src="https://contents.mediadecathlon.com/p2439549/1cr1/k$65c77e53b85c61bd89fa51d68ec49379/prod.jpg?format=auto&amp;f=400x400" alt="KIPSTA помпа за топка Essentiel"></span><span class="info"><span class="nm">KIPSTA помпа за топка Essentiel</span><span class="pr">5,99 €</span><span class="go">Виж в Decathlon →</span></span></a></div><div class="dots"><i class="on"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i></div></div><div class="stand"></div><div class="mtag">реклама</div></div><div class="ads"><a class="promo" href="https://profitshare.bg/l/3991971" target="_blank" rel="sponsored noopener" style="--c:#E4002B"><i class="tag">реклама</i><span class="ico">🏆</span><span class="ptxt"><b>eMAG</b><small>Футболни топки на добри цени</small></span><span class="cta">Виж →</span></a><a class="promo" href="https://profitshare.bg/l/3991972" target="_blank" rel="sponsored noopener" style="--c:#F57C00"><i class="tag">реклама</i><i class="until">до 02.12</i><span class="ico">🔥</span><span class="ptxt"><b>eMAG Multi Deals</b><small>Промоция седмицата – отстъпки при повече продукти</small></span><span class="cta">Виж →</span></a></div>
+<section class='refsec'><h2>💸 Допълнителен доход</h2><p class='mk-hint'>Две безплатни приложения, които плащат за неизползвания ти интернет: инсталираш ги, оставяш ги да работят и трупаш по малко всеки ден – без да правиш нищо.</p><div class='refs'><a class='ref' href='https://join.honeygain.com/IVKO1AC681' target='_blank' rel='sponsored noopener'><img src='honeygain.png' alt='Honeygain' width='48' height='48' loading='lazy'><span><b>Honeygain</b><small>Плаща ти за неизползвания интернет – телефон или компютър, работи само във фона.</small></span><i>Регистрирай се →</i></a><a class='ref' href='https://pawns.app/?r=19542009' target='_blank' rel='sponsored noopener'><img src='pawns.png' alt='Pawns.app' width='48' height='48' loading='lazy'><span><b>Pawns.app</b><small>Споделяш интернет и попълваш кратки анкети – изплащане през PayPal или крипто.</small></span><i>Регистрирай се →</i></a></div><p class='ref-note'>Как работят: споделят част от интернет връзката ти (за проучвания на пазара и проверка на реклами) или ти плащат за кратки анкети. Печалбата е скромна – обикновено няколко евро на месец – и зависи от държавата и връзката. Прочети условията им преди да инсталираш. <b>Това са наши реферални линкове</b> – ако се регистрираш през тях, получаваме малък бонус, а за теб нищо не се променя.</p></section>
+
+<h2>Преди да залагаш</h2>
+<details class="guide" aria-label="Преди да залагаш">
+<summary class="guide-head"><span class="gi">⚠️</span><div><b>Прочети преди да залагаш</b><small>Прогнозите са само информация, не гаранция за печалба (натисни)</small></div></summary>
+<details open><summary><span class="n">1</span>Рискът е реален</summary><p>Вероятностите са оценки и могат да грешат, коефициентите се менят, а всеки залог може да загуби <b>цялата заложена сума</b>. Серии от 3–5 губещи залога са нормални. Положителна стойност означава предимство само при <b>много</b> залози, не при един.</p></details>
+<details><summary><span class="n">2</span>Не залагай с пари за ежедневни нужди</summary><p>Ако решиш да участваш, определи <b>предварително</b> лимит, който можеш да си позволиш да загубиш изцяло. Не добавяй към него след загуба.</p></details>
+<details><summary><span class="n">3</span>Размер на залога</summary><p>Залогът е % от началната банка и следва шанса: под 50% е 0.5%, от 50 до 65% е 1%, над 65% е 1.5%. Процентът не се вдига след загуби. Това е как водим статистиката, не гаранция за безопасен риск.</p></details>
+<details><summary><span class="n">4</span>Провери коефициента</summary><p>Стойността е в цената. Ако при твоя букмейкър коефициентът е <b>по-нисък</b> от посочения, стойността може да я няма – тогава е по-добре да пропуснеш.</p></details>
+<details><summary><span class="n">5</span>Не е нужно да играеш всеки сигнал</summary><p>Няма задължение да следваш всичко. Само имай предвид, че нашата статистика е за <b>всички</b> сигнали заедно – ако избираш само част, твоят резултат може да е различен.</p></details>
+<details><summary><span class="n">6</span>Без гонене на загуби</summary><p>Никога не увеличавай залога, за да си върнеш загубеното. Ако залагането престане да е забавление или започне да ти тежи – спри и потърси помощ.</p></details>
+<p class="guide-foot">Само информация, не е съвет за залагане. Само за пълнолетни (18+). <a href="metodologiya.html">Методология и правила ›</a></p>
+</details>
+<h2>Как работим</h2>
+<div class="how">
+<div class="card"><b>1. Нашият модел</b><span>Всеки ден моделът минава през предстоящите мачове и сравнява цените с последните мачове на двата отбора.</span></div>
+<div class="card"><b>2. Шанс от 70% нагоре</b><span>Показваме само прогнозите с шанс от 70% нагоре. Прогнозите от други източници минават през същия праг и са отбелязани отделно.</span></div>
+<div class="card"><b>3. Виж защо</b><span>Натисни мача, за да видиш историята на отборите и защо прогнозата е избрана.</span></div>
+<div class="card"><b>4. Резултатът стои</b><span>След мача до прогнозата стои крайният резултат – и при печалба, и при загуба.</span></div>
+</div>
+<h2>Реклама и партньорства</h2>
+<div class="card">Искате да достигнете до нашата аудитория? Пишете ни – ще отговорим лично.<br><a class="tg ads" href="https://t.me/ivko_value_signals_bot?start=ads" target="_blank" rel="noopener">✉️ Пиши за реклама</a></div>
+<div class="share"><span>Сподели с приятел:</span><a href="https://t.me/share/url?url=https%3A%2F%2Fplusevsignali.com%2F&text=%E2%9A%BD%20%D0%91%D0%B5%D0%B7%D0%BF%D0%BB%D0%B0%D1%82%D0%BD%D0%B8%20%D1%84%D1%83%D1%82%D0%B1%D0%BE%D0%BB%D0%BD%D0%B8%20%D0%BF%D1%80%D0%BE%D0%B3%D0%BD%D0%BE%D0%B7%D0%B8%20%D0%B7%D0%B0%20%D0%B4%D0%BD%D0%B5%D1%81%3A" target="_blank" rel="noopener">Telegram</a><a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fplusevsignali.com%2F" target="_blank" rel="noopener">Facebook</a><a href="viber://forward?text=%E2%9A%BD%20%D0%91%D0%B5%D0%B7%D0%BF%D0%BB%D0%B0%D1%82%D0%BD%D0%B8%20%D1%84%D1%83%D1%82%D0%B1%D0%BE%D0%BB%D0%BD%D0%B8%20%D0%BF%D1%80%D0%BE%D0%B3%D0%BD%D0%BE%D0%B7%D0%B8%20%D0%B7%D0%B0%20%D0%B4%D0%BD%D0%B5%D1%81%3A%20https%3A%2F%2Fplusevsignali.com%2F">Viber</a></div>
+<footer><a href="klasirane.html">Класиране</a> · <a href="kakvo-e-ev.html">Какво е +EV залог</a> · <a href="kalkulator.html">EV калкулатор</a> · <a href="metodologiya.html">Методология</a> · <a href="za-nas.html">За нас и контакт</a> · <a href="https://t.me/ivko_value_signals_bot?start=err" target="_blank" rel="noopener">Съобщи за грешка</a> · <a href="privacy.html">Поверителност</a> · Само информация – не е съвет за залагане. Залагайте отговорно и само суми, които можете да загубите (18+).
+Коефициентите са от момента на сигнала; преди залог проверете дали са същите или по-високи.
+<p class="foot-t">Обновено: 02.11.2026 07:50 · последна проверка на коефициентите: 30.10 18:30 · <a href="https://t.me/ivko_value_signals_bot?start=err" target="_blank" rel="noopener">🛠 Съобщи за грешка</a></p></footer>
+</main></div><script>document.querySelectorAll('.r[data-href]').forEach(r=>r.onclick=()=>location.href=r.dataset.href);
+const l=new URLSearchParams(location.search).get('l');if(l){document.querySelectorAll('.r[data-lg]').forEach(r=>{if(r.dataset.lg!==l)r.remove()});document.querySelectorAll('.side a').forEach(a=>{if(a.href.endsWith('l='+encodeURIComponent(l)))a.classList.add('on')})}</script><script>
+(function () {   // „✓ Заложих“ – всеки посетител си отбелязва своите залози; пази се само в неговия браузър
+  var KEY = 'played', set = {};
+  try { set = JSON.parse(localStorage.getItem(KEY) || '{}'); } catch (e) {}
+  function paint() {
+    var n = 0, total = 0;
+    document.querySelectorAll('input.mk').forEach(function (b) {
+      b.checked = !!set[b.dataset.sid];
+      var box = b.closest('.card, .x-pick, tr'); if (box) box.classList.toggle('played', b.checked);
+      if (b.dataset.up) { total++; if (b.checked) n++; }
+    });
+    var c = document.getElementById('mk-count');
+    if (c) c.textContent = total ? 'Заложени от теб: ' + n + ' от ' + total : '';
+    // лентата най-отгоре: незаложените сигнали, чиито мачове още не са започнали
+    var open = [].filter.call(document.querySelectorAll('input.mk[data-up]'), function (b) {
+      return !b.checked && +b.dataset.ko > Date.now();
+    });
+    var bar = document.getElementById('nudge');
+    if (bar) {
+      bar.hidden = !open.length || sessionStorage.getItem('nudge-off') === '1';
+      if (open.length) bar.querySelector('b').textContent = open.length === 1
+        ? '1 незаложена прогноза' : open.length + ' незаложени прогнози';
+      if (open.length) bar.querySelector('small').textContent = 'най-близката: ' + open[0].dataset.when;
+      bar.first = open[0];
+    }
+  }
+  var bar = document.getElementById('nudge');
+  if (bar) {
+    bar.querySelector('.go').addEventListener('click', function () {
+      var card = bar.first && bar.first.closest('.card, .x-tile'); if (!card) return;
+      var day = card.closest('details'); if (day) day.open = true;
+      card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      card.classList.remove('flash'); void card.offsetWidth; card.classList.add('flash');
+    });
+    bar.querySelector('.x').addEventListener('click', function () {
+      try { sessionStorage.setItem('nudge-off', '1'); } catch (e) {} bar.hidden = true;
+    });
+  }
+  document.addEventListener('change', function (ev) {
+    var b = ev.target; if (!b.classList || !b.classList.contains('mk')) return;
+    if (b.checked) set[b.dataset.sid] = Date.now(); else delete set[b.dataset.sid];
+    var old = Date.now() - 1000 * 3600 * 24 * 60;   // по-стари от 60 дни – махат се
+    Object.keys(set).forEach(function (k) { if (set[k] < old) delete set[k]; });
+    try { localStorage.setItem(KEY, JSON.stringify(set)); } catch (e) {}
+    paint();
+  });
+  paint();
+})();
+</script><script>
+(function () {   // нови прогнози: проверка на всяка минута при отворена страница; известие само след натискане на бутона
+  var bar = document.getElementById('x-new'), bell = document.getElementById('x-bell');
+  if (!bar) return;
+  var known = null, supported = 'Notification' in window, app = document.documentElement.dataset.push || '';
+  var opted = null;   // при OneSignal важи дали устройството е абонирано, не само разрешението на браузъра
+  // при OneSignal „включени“ значи истински абонамент, не само разрешение от браузъра
+  function on() { return supported && Notification.permission === 'granted' && (app ? opted === true : true); }
+  var ios = /iPhone|iPad/.test(navigator.userAgent), last = '', tapped = false;
+  window.addEventListener('unhandledrejection', function (e) { last = String(e.reason && e.reason.message || e.reason).slice(0, 90); state(); });
+  function state() {   // само на iPhone и след натискане на бутона: кратък ред, по който се вижда къде спира абонирането
+    var el = document.getElementById('x-ios-state'); if (!el || !ios || !tapped) return;
+    var S = window.OneSignal && OneSignal.User && OneSignal.User.PushSubscription;
+    el.hidden = false;
+    el.textContent = 'Проверка: начален екран ' + (navigator.standalone ? 'да' : 'не') + ' · разрешение ' + (supported ? Notification.permission : 'няма') +
+      ' · услуга ' + (S ? 'да' : 'не') + ' · абонамент ' + (S && S.optedIn ? 'да' : 'не') + ' · номер ' + (S && S.id ? 'да' : 'не') + ' · ключ ' + (S && S.token ? 'да' : 'не') + (last ? ' · ' + last : '');
+  }
+  function paint() {
+    if (!bell) return;
+    if (!supported) {   // iPhone в браузъра: известията работят само след добавяне към началния екран
+      if (/iPhone|iPad/.test(navigator.userAgent)) { var h = document.getElementById('x-ios'); if (h) h.hidden = false; }
+      bell.hidden = true; return;
+    }
+    bell.hidden = false;
+    bell.querySelector('span').textContent = on() ? 'Известията са включени' : Notification.permission === 'denied' ? 'Известията са блокирани' : 'Включи известията';
+    bell.disabled = on() || Notification.permission === 'denied';
+    state();
+  }
+  if (bell) bell.addEventListener('click', function () {
+    tapped = true; state();
+    if (app && window.OneSignalDeferred) {
+      OneSignalDeferred.push(function (OS) {
+        var ask = Notification.permission === 'granted' ? Promise.resolve() : OS.Notifications.requestPermission();
+        return ask.then(function () { return OS.User.PushSubscription.optIn(); }).then(function () {
+          opted = OS.User.PushSubscription.optedIn; paint();
+          setTimeout(paint, 4000);   // номерът и ключът идват малко по-късно
+        }).catch(function (e) { last = String(e && e.message || e).slice(0, 90); paint(); });
+      });
+    } else if (supported) {
+      Notification.requestPermission().then(paint);
+    }
+  });
+  paint();
+  if (app && window.OneSignalDeferred) OneSignalDeferred.push(function (OS) {
+    opted = OS.User.PushSubscription.optedIn; paint();
+    OS.User.PushSubscription.addEventListener('change', function (e) { opted = e.current.optedIn; paint(); });
+  });
+  bar.querySelector('button').addEventListener('click', function () { location.replace(location.pathname + '?r=' + Date.now()); });
+  function check() {
+    fetch('novi.json?t=' + Date.now(), { cache: 'no-store' }).then(function (r) { return r.json(); }).then(function (d) {
+      if (!known) { known = {}; d.ids.forEach(function (i) { known[i] = 1; }); [].forEach.call(document.querySelectorAll('input.mk[data-sid^="x"]'), function (b) { known[b.dataset.sid] = 1; }); }
+      var fresh = d.ids.filter(function (i) { return !known[i]; });
+      if (!fresh.length) return;
+      fresh.forEach(function (i) { known[i] = 1; });
+      var seen = (+bar.dataset.n || 0) + fresh.length;
+      bar.dataset.n = seen;
+      bar.querySelector('b').textContent = seen === 1 ? 'Излезе нова прогноза' : 'Излязоха ' + seen + ' нови прогнози';
+      bar.hidden = false;
+      if (on() && document.hidden) {
+        var n = new Notification('+EV Сигнали', { body: bar.querySelector('b').textContent, icon: 'logo.png' });
+        n.onclick = function () { window.focus(); n.close(); };
+      }
+    }).catch(function () {});
+  }
+  check();
+  setInterval(check, 60000);
+})();
+</script><script>
+(function () {
+  var inp = document.getElementById('bank'); if (!inp) return;
+  var fmt = function (x) { return x.toFixed(2).replace('.', ',') + ' €'; };
+  function upd() {
+    var b = parseFloat(String(inp.value).replace(',', '.'));
+    var ok = b > 0 && isFinite(b);
+    document.querySelectorAll('[data-tier]').forEach(function (el) {
+      el.textContent = ok ? fmt(b * parseFloat(el.dataset.tier) / 100) : '–';
+    });
+    document.querySelectorAll('.mine').forEach(function (el) {
+      if (!ok) { el.hidden = true; return; }
+      var st = b * parseFloat(el.dataset.pct) / 100, odds = parseFloat(el.dataset.odds);
+      el.innerHTML = 'При твоята банка: залог <b>' + fmt(st) + '</b> · ако мине: <b>+' + fmt(st * (odds - 1)) + '</b>';
+      el.hidden = false;
+    });
+    try { ok ? localStorage.setItem('bank', b) : localStorage.removeItem('bank'); } catch (e) {}
+  }
+  try { var s = localStorage.getItem('bank'); if (s) inp.value = s; } catch (e) {}
+  inp.addEventListener('input', upd); upd();
+})();
+</script><script>
+document.querySelectorAll('.mon').forEach(function (m) {
+  var s = m.querySelectorAll('.slide'), d = m.querySelectorAll('.dots i'), i = 0, hold = false;
+  if (s.length < 2) return;
+  m.addEventListener('mouseenter', function () { hold = true; });
+  m.addEventListener('mouseleave', function () { hold = false; });
+  d.forEach(function (dot, k) { dot.addEventListener('click', function () { go(k); }); });
+  function go(k) { s[i].classList.remove('on'); d[i].classList.remove('on'); i = k; s[i].classList.add('on'); d[i].classList.add('on'); }
+  setInterval(function () { if (!hold) go((i + 1) % s.length); }, 4000);
+});
+</script><script data-goatcounter="https://plusev.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script></body></html>
