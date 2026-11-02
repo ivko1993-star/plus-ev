@@ -1,8 +1,8 @@
 <!doctype html>
 <html lang="bg"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Методология: как работи нашият модел | +EV Сигнали</title>
+<title>Методология: как работи нашият модел | Футболни прогнози</title>
 <meta name="description" content="Откъде идват данните, как моделът избира прогноза и какво значат числата.уреждане и ограничения на модела.">
-<link rel="canonical" href="https://plusevsignali.com/metodologiya.html"><meta property="og:title" content="Методология: как работи нашият модел | +EV Сигнали"><meta property="og:description" content="Откъде идват данните, как моделът избира прогноза и какво значат числата.уреждане и ограничения на модела."><meta property="og:image" content="https://plusevsignali.com/logo.png"><link rel="icon" type="image/png" href="favicon.png">
+<link rel="canonical" href="https://plusevsignali.com/metodologiya.html"><meta property="og:title" content="Методология: как работи нашият модел | Футболни прогнози"><meta property="og:description" content="Откъде идват данните, как моделът избира прогноза и какво значат числата.уреждане и ограничения на модела."><meta property="og:image" content="https://plusevsignali.com/logo.png"><link rel="icon" type="image/png" href="favicon.png">
 <style>
 :root { color-scheme:light; --bg:#f3fbf7; --card:#fff; --text:#1c2b33; --muted:#5f7078; --line:#dcece4; --accent:#0f9d6b; --green:#0f9d6b; --red:#d9534f; }
 @media not all { :root { --bg:#0e1116; --card:#161b22; --text:#e6e9ef; --muted:#9aa4b2; --line:#262c36; --accent:#3ccf91; --green:#3ccf91; --red:#ff6b6b; } }
@@ -34,7 +34,7 @@ i.flag { display:inline-block; width:18px; height:13px; border-radius:2px; verti
 .tg-ic { flex:none; vertical-align:-4px; margin-right:7px; }
 .topbar .brand-t { min-width:0; } .topbar a.logo { display:flex; } .tb-name { display:block; font-size:19px; font-weight:700; line-height:1.15; color:#fff; white-space:nowrap; text-decoration:none; }
 .formula { background:var(--card); border:1px solid var(--line); border-left:4px solid var(--accent); border-radius:8px; padding:10px 14px; margin:8px 0; font-family:ui-monospace,Consolas,monospace; font-size:14px; } h3 { font-size:16px; margin:18px 0 6px; }</style><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7252869771898056" crossorigin="anonymous"></script></head>
-<body><header class="topbar"><div class="tb-in"><a class="logo" href="./" title="Начало"><img src="logo.png" alt="+EV Сигнали" width="42" height="42"></a><div class="brand-t"><a class="tb-name" href="./">+EV Сигнали</a><p>Футболни прогнози за днес</p></div><nav class="tb-nav" aria-label="Меню"><a href='./'>Прогнози</a><a href='klasirane.html'>Класиране</a><a href='kalkulator.html'>Калкулатор</a><a href='metodologiya.html'>Методология</a></nav></div></header>
+<body><header class="topbar"><div class="tb-in"><a class="logo" href="./" title="Начало"><img src="logo.png" alt="Футболни прогнози" width="42" height="42"></a><div class="brand-t"><a class="tb-name" href="./">Футболни прогнози</a><p>Футболни прогнози за днес</p></div><nav class="tb-nav" aria-label="Меню"><a href='./'>Прогнози</a><a href='klasirane.html'>Класиране</a><a href='kalkulator.html'>Калкулатор</a><a href='metodologiya.html'>Методология</a></nav></div></header>
 <script>(()=>{const b=document.createElement('div');b.className='tip-box';b.hidden=true;let cur=null;const hide=()=>{b.hidden=true;cur=null},show=t=>{if(!b.isConnected)document.body.append(b);cur=t;b.textContent=t.dataset.tip;b.hidden=false;const r=t.getBoundingClientRect(),w=b.offsetWidth,h=b.offsetHeight,x=Math.max(8,Math.min(innerWidth-w-8,r.left+r.width/2-w/2)),y=r.top-h-8;b.style.left=x+'px';b.style.top=(y<8?r.bottom+8:y)+'px'};document.addEventListener('mouseover',e=>{const t=e.target.closest&&e.target.closest('.tip');if(t)show(t);else if(cur&&document.activeElement!==cur)hide()});document.addEventListener('focusin',e=>{const t=e.target.closest&&e.target.closest('.tip');if(t)show(t)});document.addEventListener('focusout',hide);addEventListener('scroll',hide,{passive:true});document.addEventListener('click',e=>{const t=e.target.closest&&e.target.closest('.tip');if(t){e.preventDefault();e.stopPropagation();t.focus();show(t)}},true)})()</script>
 <main>
 <h1>Методология: как работи нашият модел</h1>
@@ -44,16 +44,16 @@ i.flag { display:inline-block; width:18px; height:13px; border-radius:2px; verti
 <h2>2. Как моделът избира прогноза</h2>
 <ul><li><b>Шанс от пазара:</b> от коефициентите махаме маржа на букмейкъра. Шанс = (1/коефициент) ÷ сбора на 1/коефициент за всички изходи на пазара.</li>
 <li><b>Оценка от мачовете:</b> от последните 10 мача на всеки отбор смятаме очакваните голове, с xG, а без него с реалните голове. Домакинът се гледа у дома, а гостът навън, ако има поне 5 такива мача.</li>
-<li><b>Прагове:</b> изходът минава, ако шансът от пазара е поне 60%, а оценката от мачовете поне 55%. На сайта излиза само при шанс от пазара поне 70%.</li>
-<li><b>Без сигурните изходи:</b> двоен шанс, над 1.5 и под 3.5 гола не влизат, защото минават често почти във всеки мач и коефициентите им са много ниски.</li></ul>
+<li><b>Прагове:</b> прагът е по шанса на модела. Победа на домакина, над 1.5 и под 3.5 гола излизат при поне 70%. Другите пазари не излизат, защото при проверка назад 70% от модела не дават 70% излезли. Корнери моделът още не оценява.</li>
+<li><b>Ниски коефициенти:</b> над 1.5 и под 3.5 гола излизат често, но коефициентите им обикновено са ниски.</li></ul>
 <h2>3. 1 X 2</h2>
 <p>От очакваните голове на двата отбора с разпределение на Поасон смятаме шанса за победа на домакина, равен и победа на госта. За минали мачове числата са сметнати само от мачове преди началото им, но може да са показани след самия мач.</p>
 <h2>4. Коефициент и резултат</h2>
-<ul><li><b>Коефициент:</b> ориентировъчен, записан при избора на прогнозата. Преди решение провери дали е същият и при теб.</li>
+<ul><li><b>Коефициент:</b> ориентировъчен, с часа на записа. Преди решение провери дали е същият и при теб.</li>
 <li><b>Резултат:</b> след края на мача до прогнозата излиза крайният резултат и дали печели или губи. Върнатите са отбелязани отделно.</li>
 <li><b>Какво остава на сайта:</b> показваме прогнозите за вчера, днес и утре. По-старите са в архив и не са публикувани.</li></ul>
 <h2>5. Ограничения</h2>
-<ul><li><b>Няма доказано предимство:</b> при проверка назад върху 3917 прогнози от 22 първенства (2021–2026) излязоха 71%, но при среден коефициент 1.39 възвръщаемостта е около −2.4%. Висок шанс значи, че изходът минава по-често, не че залогът е печеливш.</li>
+<ul><li><b>Няма доказано предимство:</b> висок шанс значи, че изходът минава по-често, не че залогът е печеливш. При предишното правило 71% излязоха, а ROI беше около −2.4%. Виж <a href='tochnost.html'>точност и ROI</a>.</li>
 <li><b>Шансът е оценка:</b> може да греши и не е гаранция.</li>
 <li><b>Непълен обхват:</b> не минаваме през всички мачове и моделът не знае всичко, например късни контузии или смени в състава.</li>
 <li>Само информация, не е съвет за залагане. 18+</li></ul>
